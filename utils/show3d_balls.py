@@ -5,7 +5,7 @@ import cv2
 import sys
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-Show_mode = True
+Show_mode = 0
 showsz=1000
 mousex,mousey=0.5,0.5
 zoom=1.0
@@ -23,7 +23,7 @@ cv2.setMouseCallback('show3d',onmouse)
 
 dll=np.ctypeslib.load_library(os.path.join(BASE_DIR, 'render_balls_so'),'.')
 
-def showpoints(xyz,c_gt=None, c_pred = None ,waittime=0,showrot=False,magnifyBlue=0,freezerot=False,background=(0,0,0),normalizecolor=True,ballradius=10):
+def showpoints(xyz,c_gt=None, c_pred = None ,c_res=None,waittime=0,showrot=False,magnifyBlue=0,freezerot=False,background=(0,0,0),normalizecolor=True,ballradius=10):
     global showsz,mousex,mousey,zoom,changed
     xyz=xyz-xyz.mean(axis=0)
     radius=((xyz**2).sum(axis=-1)**0.5).max()
@@ -97,10 +97,12 @@ def showpoints(xyz,c_gt=None, c_pred = None ,waittime=0,showrot=False,magnifyBlu
             cv2.putText(show,'xangle %d'%(int(xangle/np.pi*180)),(80,showsz-30),0,1,(255,0,0))
             cv2.putText(show,'yangle %d'%(int(yangle/np.pi*180)),(80,showsz-70),0,1,(255,0,0))
             cv2.putText(show,'zoom %d%%'%(int(zoom*100)),(80,showsz-100),0,1,(255,0,0))
-        if Show_mode:
+        if Show_mode==0:
             label = 'Ground Truth'
-        else:
+        elif Show_mode == 1:
             label = 'Predict Labels'
+        else:
+            label = 'Residual'
         cv2.putText(show, 'Mode: '+label, (showsz - 600, showsz - 60), 2, 1, (255, 255, 255))
     changed=True
     while True:
@@ -117,10 +119,10 @@ def showpoints(xyz,c_gt=None, c_pred = None ,waittime=0,showrot=False,magnifyBlu
         elif cmd==ord('Q'):
             sys.exit(0)
 
-        if cmd==ord('g') or cmd == ord('p'):
+        if cmd==ord('g') or cmd == ord('p') or cmd == ord('r'):
             if cmd == ord('g'):
                 global Show_mode
-                Show_mode = True
+                Show_mode = 0
                 if c_gt is None:
                     c0=np.zeros((len(xyz),),dtype='float32')+255
                     c1=np.zeros((len(xyz),),dtype='float32')+255
@@ -129,8 +131,8 @@ def showpoints(xyz,c_gt=None, c_pred = None ,waittime=0,showrot=False,magnifyBlu
                     c0=c_gt[:,0]
                     c1=c_gt[:,1]
                     c2=c_gt[:,2]
-            else:
-                Show_mode = False
+            elif cmd == ord('p'):
+                Show_mode = 1
                 if c_pred is None:
                     c0=np.zeros((len(xyz),),dtype='float32')+255
                     c1=np.zeros((len(xyz),),dtype='float32')+255
@@ -139,6 +141,16 @@ def showpoints(xyz,c_gt=None, c_pred = None ,waittime=0,showrot=False,magnifyBlu
                     c0=c_pred[:,0]
                     c1=c_pred[:,1]
                     c2=c_pred[:,2]
+            else:
+                Show_mode = 2
+                if c_res is None:
+                    c0 = np.zeros((len(xyz),), dtype='float32') + 255
+                    c1 = np.zeros((len(xyz),), dtype='float32') + 255
+                    c2 = np.zeros((len(xyz),), dtype='float32') + 255
+                else:
+                    c0 = c_res[:, 0]
+                    c1 = c_res[:, 1]
+                    c2 = c_res[:, 2]
             if normalizecolor:
                 c0/=(c0.max()+1e-14)/255.0
                 c1/=(c1.max()+1e-14)/255.0
@@ -176,7 +188,7 @@ if __name__=='__main__':
     point_cls = 'JAX_'+number+'_CLS.txt'
     gt = []
     pred = []
-    GT = []
+    Residual = []
     f = open('../data/dfc/inference_data/in/'+ point_name, 'r')
     data = f.readlines()  #txt中所有字符串读入data
     for line in data:
@@ -233,7 +245,21 @@ if __name__=='__main__':
         format_float = []
     pred = np.array(numbers_float)
     pred = np.reshape(pred,[len(point), 3])
+    numbers_float = []
+
+    for line_gt, line_pred in zip(data2,data3):
+        line_gt = int(line_gt)
+        line_pred = int(line_pred)
+        if line_gt - line_pred is not 0:
+            format_float.append([0, 255, 0]) #Red color
+        else:
+            format_float.append([0,0,0])
+        numbers_float.append(format_float)
+        format_float = []
+    Residual = np.array(numbers_float)
+    Residual = np.reshape(Residual, [len(point), 3])
+
     print(np.unique(pred))
-    showpoints(point[:,0:3], c_gt = gt, c_pred= pred, ballradius = 2, normalizecolor=False,showrot= True)
+    showpoints(point[:,0:3], c_gt = gt, c_pred= pred, c_res= Residual,ballradius = 2, normalizecolor=False,showrot= True)
 
 
