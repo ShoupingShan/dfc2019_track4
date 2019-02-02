@@ -5,7 +5,8 @@ import cv2
 import sys
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-showsz=800
+Show_mode = True
+showsz=1000
 mousex,mousey=0.5,0.5
 zoom=1.0
 changed=True
@@ -93,9 +94,14 @@ def showpoints(xyz,c_gt=None, c_pred = None ,waittime=0,showrot=False,magnifyBlu
             if magnifyBlue>=2:
                 show[:,:,0]=np.maximum(show[:,:,0],np.roll(show[:,:,0],-1,axis=1))
         if showrot:
-            cv2.putText(show,'xangle %d'%(int(xangle/np.pi*180)),(30,showsz-30),0,0.5,cv2.cv.CV_RGB(255,0,0))
-            cv2.putText(show,'yangle %d'%(int(yangle/np.pi*180)),(30,showsz-50),0,0.5,cv2.cv.CV_RGB(255,0,0))
-            cv2.putText(show,'zoom %d%%'%(int(zoom*100)),(30,showsz-70),0,0.5,cv2.cv.CV_RGB(255,0,0))
+            cv2.putText(show,'xangle %d'%(int(xangle/np.pi*180)),(80,showsz-30),0,1,(255,0,0))
+            cv2.putText(show,'yangle %d'%(int(yangle/np.pi*180)),(80,showsz-70),0,1,(255,0,0))
+            cv2.putText(show,'zoom %d%%'%(int(zoom*100)),(80,showsz-100),0,1,(255,0,0))
+        if Show_mode:
+            label = 'Ground Truth'
+        else:
+            label = 'Predict Labels'
+        cv2.putText(show, 'Mode: '+label, (showsz - 600, showsz - 60), 2, 1, (255, 255, 255))
     changed=True
     while True:
         if changed:
@@ -111,8 +117,10 @@ def showpoints(xyz,c_gt=None, c_pred = None ,waittime=0,showrot=False,magnifyBlu
         elif cmd==ord('Q'):
             sys.exit(0)
 
-        if cmd==ord('t') or cmd == ord('p'):
-            if cmd == ord('t'):
+        if cmd==ord('g') or cmd == ord('p'):
+            if cmd == ord('g'):
+                global Show_mode
+                Show_mode = True
                 if c_gt is None:
                     c0=np.zeros((len(xyz),),dtype='float32')+255
                     c1=np.zeros((len(xyz),),dtype='float32')+255
@@ -122,6 +130,7 @@ def showpoints(xyz,c_gt=None, c_pred = None ,waittime=0,showrot=False,magnifyBlu
                     c1=c_gt[:,1]
                     c2=c_gt[:,2]
             else:
+                Show_mode = False
                 if c_pred is None:
                     c0=np.zeros((len(xyz),),dtype='float32')+255
                     c1=np.zeros((len(xyz),),dtype='float32')+255
@@ -162,7 +171,7 @@ if __name__=='__main__':
     #r g b->g r b
     color_map = [[255, 255, 255],  [133, 205, 63], [255, 0, 0], [206, 135, 250], [112, 147, 219], [125, 139, 107]]
     # undefine, ground, high vegetation, building, water, Bridge Deck
-    number = '214'
+    number = '004'
     point_name = 'JAX_'+number+'_PC3.txt'
     point_cls = 'JAX_'+number+'_CLS.txt'
     gt = []
@@ -225,6 +234,6 @@ if __name__=='__main__':
     pred = np.array(numbers_float)
     pred = np.reshape(pred,[len(point), 3])
     print(np.unique(pred))
-    showpoints(point[:,0:3], c_gt = gt, c_pred= None, ballradius = 2, normalizecolor=False)
+    showpoints(point[:,0:3], c_gt = gt, c_pred= pred, ballradius = 2, normalizecolor=False,showrot= True)
 
 
