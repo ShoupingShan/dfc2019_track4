@@ -157,5 +157,74 @@ def showpoints(xyz,c_gt=None, c_pred = None ,waittime=0,showrot=False,magnifyBlu
     return cmd
 if __name__=='__main__':
     np.random.seed(100)
-    showpoints(np.random.randn(2500,3))
+    numbers_float = []
+    format_float = []
+    #r g b->g r b
+    color_map = [[255, 255, 255],  [133, 205, 63], [255, 0, 0], [206, 135, 250], [112, 147, 219], [125, 139, 107]]
+    # undefine, ground, high vegetation, building, water, Bridge Deck
+    number = '214'
+    point_name = 'JAX_'+number+'_PC3.txt'
+    point_cls = 'JAX_'+number+'_CLS.txt'
+    gt = []
+    pred = []
+    GT = []
+    f = open('../data/dfc/inference_data/in/'+ point_name, 'r')
+    data = f.readlines()  #txt中所有字符串读入data
+    for line in data:
+        line = line[:-1]
+        line = line.split(',')
+        for l in line:
+            l = float(l)
+            format_float.append(l)
+        numbers_float.append(format_float)
+        format_float = []
+    point = np.array(numbers_float)
+    numbers_float = []
+    g = open('/home/shp/Documents/Code/Python/Contest/dfc2019/track4/pointnet2/data/dfc/inference_data/gt/'+point_cls ,'r')
+    data2 = g.readlines()
+    print("GT:",np.unique(np.array(data2)))
+    for line in data2:
+        line = int(line)
+        if line == 0:
+            format_float.append(color_map[0])
+        elif line ==2:
+            format_float.append(color_map[1])
+        elif line ==5:
+            format_float.append(color_map[2])
+        elif line ==6:
+            format_float.append(color_map[3])
+        elif line ==9:
+            format_float.append(color_map[4])
+        elif line == 17:
+            format_float.append(color_map[5])
+        numbers_float.append(format_float)
+        format_float = []
+    gt = np.array(numbers_float)
+    gt = np.reshape(gt,[len(point), 3])
+    # print(np.unique(gt))
+    numbers_float = []
+    p = open('/home/shp/Documents/Code/Python/Contest/dfc2019/track4/pointnet2/data/dfc/inference_data/out/'+point_cls ,'r')
+    data3 = p.readlines()
+    print("Pred:", np.unique(np.array(data3)))
+    for line in data3:
+        line = int(line)
+        if line == 0:
+            format_float.append(color_map[0])
+        elif line ==2:
+            format_float.append(color_map[1])
+        elif line ==5:
+            format_float.append(color_map[2])
+        elif line ==6:
+            format_float.append(color_map[3])
+        elif line ==9:
+            format_float.append(color_map[4])
+        elif line == 17:
+            format_float.append(color_map[5])
+        numbers_float.append(format_float)
+        format_float = []
+    pred = np.array(numbers_float)
+    pred = np.reshape(pred,[len(point), 3])
+    print(np.unique(pred))
+    showpoints(point[:,0:3], c_gt = gt, c_pred= None, ballradius = 2, normalizecolor=False)
+
 
