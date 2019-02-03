@@ -5,7 +5,8 @@
 sh compile_render_balls_so.sh
 python show3d_balls.py
 ```
-###Tips
+### Tips
+
   **keyboard shortcut:**
   |shortcut| function|
   |:--:|:--|
@@ -23,7 +24,8 @@ python show3d_balls.py
 sh compile_render_balls_so.sh
 python sample_extend_mouse.py
 ```
-###Tips
+### Tips
+
   **keyboard shortcut:**
   |shortcut| function|
   |:--:|:--|
