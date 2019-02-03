@@ -8,7 +8,8 @@ python show3d_balls.py
 ### Tips
 
   **keyboard shortcut:**
-  |shortcut| function|
+
+  |**Shortcut**| **Function**|
   |:--:|:--|
   |`g`|Show Ground Truth|
   |`p`|Show Prediction Labels|
@@ -27,7 +28,8 @@ python sample_extend_mouse.py
 ### Tips
 
   **keyboard shortcut:**
-  |shortcut| function|
+
+  |**Shortcut**| **Function**|
   |:--:|:--|
   |`e`|Exit rect part|
   |`g`|Show Ground Truth|
