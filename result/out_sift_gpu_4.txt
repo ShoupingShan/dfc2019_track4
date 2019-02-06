@@ -1,0 +1,2324 @@
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_004_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_004_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 25208 unlabeled truth points
+446939
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_004_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_004_CLS.txt):
+Confusion matrix with overall accuracy: 98.00%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     259940|       18|      539|       84|        0|       28|
+5        200|   137310|     1996|        0|        0|      111|
+6        659|     5077|    49123|        0|        0|       59|
+9        372|        0|        0|      566|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.8700843519839072
+Class  2 (     Ground      ), IOU: 0.9927
+Class  5 ( High Vegetation ), IOU: 0.9489
+Class  6 (    Building     ), IOU: 0.8550
+Class  9 (      Water      ), IOU: 0.5538
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_017_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_017_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 23664 unlabeled truth points
+500319
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_017_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_017_CLS.txt):
+Confusion matrix with overall accuracy: 96.67%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     319746|        0|      432|        0|      641|       52|
+5        150|   136358|     3233|        0|        0|      159|
+6        999|    11257|    41073|        0|        0|       79|
+9          0|        0|        0|        0|        0|        0|
+17       224|        0|        0|        0|     3142|        0|
+
+MIOU: 0.8796256680228034
+Class  2 (     Ground      ), IOU: 0.9922
+Class  5 ( High Vegetation ), IOU: 0.9021
+Class  6 (    Building     ), IOU: 0.7197
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 0.7841
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_018_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_018_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 23138 unlabeled truth points
+397212
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_018_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_018_CLS.txt):
+Confusion matrix with overall accuracy: 96.61%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     251395|        1|      501|       63|        0|       43|
+5         92|    86402|     4175|        0|        0|      137|
+6       1412|     7153|    59137|        0|        0|      124|
+9        236|        0|        0|      278|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.8340444586621537
+Class  2 (     Ground      ), IOU: 0.9907
+Class  5 ( High Vegetation ), IOU: 0.8820
+Class  6 (    Building     ), IOU: 0.8157
+Class  9 (      Water      ), IOU: 0.4818
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_020_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_020_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 15860 unlabeled truth points
+463696
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_020_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_020_CLS.txt):
+Confusion matrix with overall accuracy: 97.59%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     299236|        0|      276|      278|      194|       14|
+5         68|   119490|     2374|        0|        0|       94|
+6        974|     6760|    42892|        0|        0|       54|
+9        353|        0|        0|      797|        0|        0|
+17         0|        0|        0|        0|     1281|        0|
+
+MIOU: 0.8303069130302214
+Class  2 (     Ground      ), IOU: 0.9928
+Class  5 ( High Vegetation ), IOU: 0.9278
+Class  6 (    Building     ), IOU: 0.8043
+Class  9 (      Water      ), IOU: 0.5581
+Class 17 (   Bridge Deck   ), IOU: 0.8685
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_022_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_022_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 25038 unlabeled truth points
+394001
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_022_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_022_CLS.txt):
+Confusion matrix with overall accuracy: 96.17%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     230805|        4|      476|      244|        0|       47|
+5        194|   114795|     3505|        0|        0|      231|
+6       1322|     7093|    48086|        0|        0|      138|
+9       2449|        0|        0|      315|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7580421431972216
+Class  2 (     Ground      ), IOU: 0.9799
+Class  5 ( High Vegetation ), IOU: 0.9124
+Class  6 (    Building     ), IOU: 0.7932
+Class  9 (      Water      ), IOU: 0.1047
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_028_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_028_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 27180 unlabeled truth points
+478922
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_028_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_028_CLS.txt):
+Confusion matrix with overall accuracy: 97.40%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     297050|        2|      384|      790|      545|       61|
+5        100|   116604|     2689|        1|        0|       91|
+6       1127|     5860|    61346|        0|        7|       77|
+9       1046|        0|        0|     1652|        0|       23|
+17         0|        0|        0|        0|     2270|        0|
+
+MIOU: 0.809933976675399
+Class  2 (     Ground      ), IOU: 0.9865
+Class  5 ( High Vegetation ), IOU: 0.9302
+Class  6 (    Building     ), IOU: 0.8581
+Class  9 (      Water      ), IOU: 0.4704
+Class 17 (   Bridge Deck   ), IOU: 0.8044
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_031_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_031_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 25200 unlabeled truth points
+465374
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_031_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_031_CLS.txt):
+Confusion matrix with overall accuracy: 96.13%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     258480|        8|      600|        0|      448|      127|
+5        168|   168391|     4521|        0|        0|      214|
+6        931|    10823|    36983|        0|        0|      155|
+9          0|        0|        0|        0|        0|        0|
+17        24|      393|      228|        0|     1520|       73|
+
+MIOU: 0.8302962917003024
+Class  2 (     Ground      ), IOU: 0.9912
+Class  5 ( High Vegetation ), IOU: 0.9126
+Class  6 (    Building     ), IOU: 0.6818
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 0.5659
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_033_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_033_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 32242 unlabeled truth points
+446240
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_033_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_033_CLS.txt):
+Confusion matrix with overall accuracy: 97.93%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     351184|        1|      437|        3|        0|       33|
+5         47|    55502|     1001|        0|        0|       55|
+6       1921|     4116|    39047|        0|      616|      129|
+9       1090|        0|        0|      507|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.6094093011564086
+Class  2 (     Ground      ), IOU: 0.9900
+Class  5 ( High Vegetation ), IOU: 0.9140
+Class  6 (    Building     ), IOU: 0.8261
+Class  9 (      Water      ), IOU: 0.3169
+Class 17 (   Bridge Deck   ), IOU: 0.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_068_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_068_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 23363 unlabeled truth points
+357925
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_068_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_068_CLS.txt):
+Confusion matrix with overall accuracy: 98.76%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     240304|        6|      858|      203|        0|       75|
+5         66|    39298|      617|        0|        0|       37|
+6        904|     1033|    77632|        0|        8|       52|
+9        619|        0|        0|      691|        0|        2|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.6718432872749135
+Class  2 (     Ground      ), IOU: 0.9888
+Class  5 ( High Vegetation ), IOU: 0.9572
+Class  6 (    Building     ), IOU: 0.9572
+Class  9 (      Water      ), IOU: 0.4561
+Class 17 (   Bridge Deck   ), IOU: 0.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_070_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_070_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 19034 unlabeled truth points
+469609
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_070_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_070_CLS.txt):
+Confusion matrix with overall accuracy: 97.63%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     318094|        0|      356|     1140|        0|       24|
+5        185|    96772|     3250|        0|        0|       92|
+6        972|     3973|    53360|        0|        0|       33|
+9       1242|        0|        0|     1383|        0|        2|
+17       134|        0|        0|        0|        0|        0|
+
+MIOU: 0.6288100785228051
+Class  2 (     Ground      ), IOU: 0.9874
+Class  5 ( High Vegetation ), IOU: 0.9281
+Class  6 (    Building     ), IOU: 0.8614
+Class  9 (      Water      ), IOU: 0.3671
+Class 17 (   Bridge Deck   ), IOU: 0.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_072_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_072_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 23347 unlabeled truth points
+361891
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_072_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_072_CLS.txt):
+Confusion matrix with overall accuracy: 97.09%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     233236|        0|      606|      138|        0|       22|
+5         43|    59272|     3721|        0|        0|      118|
+6       1562|     4521|    69268|        0|        0|       96|
+9         23|        0|        0|      115|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.8301285302803137
+Class  2 (     Ground      ), IOU: 0.9898
+Class  5 ( High Vegetation ), IOU: 0.8758
+Class  6 (    Building     ), IOU: 0.8683
+Class  9 (      Water      ), IOU: 0.4167
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_079_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_079_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 25548 unlabeled truth points
+423326
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_079_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_079_CLS.txt):
+Confusion matrix with overall accuracy: 98.68%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     289905|       15|      255|      147|      511|       29|
+5         86|    62994|      712|        0|        0|       43|
+6        705|     1699|    56381|        0|        0|       51|
+9          0|        0|        0|        0|        0|        0|
+17       667|      109|      451|        0|    14046|      163|
+
+MIOU: 0.753535871641461
+Class  2 (     Ground      ), IOU: 0.9917
+Class  5 ( High Vegetation ), IOU: 0.9594
+Class  6 (    Building     ), IOU: 0.9357
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 0.8808
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_105_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_105_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 26222 unlabeled truth points
+464128
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_105_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_105_CLS.txt):
+Confusion matrix with overall accuracy: 97.30%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     296345|        1|      535|      517|        0|       40|
+5        111|   111714|     1860|        0|        0|      127|
+6        606|     8160|    55701|        0|        0|      163|
+9        316|        0|        0|      229|        0|        1|
+17        25|      305|       75|        0|      139|       41|
+
+MIOU: 0.6379109338566594
+Class  2 (     Ground      ), IOU: 0.9928
+Class  5 ( High Vegetation ), IOU: 0.9136
+Class  6 (    Building     ), IOU: 0.8301
+Class  9 (      Water      ), IOU: 0.2154
+Class 17 (   Bridge Deck   ), IOU: 0.2376
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_113_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_113_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 29462 unlabeled truth points
+435349
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_113_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_113_CLS.txt):
+Confusion matrix with overall accuracy: 98.58%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     306742|        5|      258|      145|       16|       38|
+5         79|    75492|     1497|        0|        0|       77|
+6        673|     3002|    51255|        0|        0|       58|
+9        259|        0|        0|     1007|        0|        1|
+17       161|        0|        0|        0|      853|        0|
+
+MIOU: 0.8762346215173686
+Class  2 (     Ground      ), IOU: 0.9947
+Class  5 ( High Vegetation ), IOU: 0.9419
+Class  6 (    Building     ), IOU: 0.9033
+Class  9 (      Water      ), IOU: 0.7132
+Class 17 (   Bridge Deck   ), IOU: 0.8282
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_117_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_117_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 26765 unlabeled truth points
+440449
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_117_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_117_CLS.txt):
+Confusion matrix with overall accuracy: 96.51%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     275312|        9|      547|      384|      110|       61|
+5         88|   103283|     3899|        0|        0|      120|
+6       1616|     8574|    56787|        0|        0|      141|
+9        240|        1|        0|     1249|        0|        8|
+17       145|        4|        0|        0|     3818|        0|
+
+MIOU: 0.8545384070142374
+Class  2 (     Ground      ), IOU: 0.9885
+Class  5 ( High Vegetation ), IOU: 0.8905
+Class  6 (    Building     ), IOU: 0.7935
+Class  9 (      Water      ), IOU: 0.6637
+Class 17 (   Bridge Deck   ), IOU: 0.9365
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_118_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_118_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 14637 unlabeled truth points
+386104
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_118_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_118_CLS.txt):
+Confusion matrix with overall accuracy: 99.18%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     296970|        0|      188|      621|        0|       11|
+5         48|    55461|      757|        0|        0|       19|
+6        513|      992|    32296|        0|        0|       34|
+9          3|        0|        0|     1377|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9160782419082603
+Class  2 (     Ground      ), IOU: 0.9954
+Class  5 ( High Vegetation ), IOU: 0.9683
+Class  6 (    Building     ), IOU: 0.9286
+Class  9 (      Water      ), IOU: 0.6882
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_122_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_122_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 21301 unlabeled truth points
+358610
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_122_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_122_CLS.txt):
+Confusion matrix with overall accuracy: 98.68%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     253150|        4|      434|      172|      105|       41|
+5         59|    51218|      923|        0|        0|       61|
+6       1138|     1180|    53574|        0|        0|       15|
+9        480|        0|        2|      553|        0|        4|
+17       191|        0|        0|        0|      115|        1|
+
+MIOU: 0.7238748970475263
+Class  2 (     Ground      ), IOU: 0.9897
+Class  5 ( High Vegetation ), IOU: 0.9583
+Class  6 (    Building     ), IOU: 0.9355
+Class  9 (      Water      ), IOU: 0.4566
+Class 17 (   Bridge Deck   ), IOU: 0.2791
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_144_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_144_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 23145 unlabeled truth points
+454627
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_144_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_144_CLS.txt):
+Confusion matrix with overall accuracy: 98.46%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     252157|       98|      378|        0|        0|       60|
+5        188|   169981|     1515|        0|        0|      143|
+6        461|     4258|    32489|        0|        0|       29|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.958080832801978
+Class  2 (     Ground      ), IOU: 0.9953
+Class  5 ( High Vegetation ), IOU: 0.9648
+Class  6 (    Building     ), IOU: 0.8303
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_149_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_149_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 34417 unlabeled truth points
+435862
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_149_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_149_CLS.txt):
+Confusion matrix with overall accuracy: 97.27%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     234700|       38|      507|     4123|        0|       93|
+5        229|   152536|     1047|        1|        0|      205|
+6        833|     4816|    36127|        0|        0|      109|
+9        198|        1|        0|    12499|        0|       11|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9018603981294078
+Class  2 (     Ground      ), IOU: 0.9750
+Class  5 ( High Vegetation ), IOU: 0.9601
+Class  6 (    Building     ), IOU: 0.8317
+Class  9 (      Water      ), IOU: 0.7425
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_156_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_156_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 40086 unlabeled truth points
+300409
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_156_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_156_CLS.txt):
+Confusion matrix with overall accuracy: 97.96%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     202544|       24|      189|      492|        0|      132|
+5         55|    32286|      393|        0|        0|       35|
+6        585|      235|    65571|        0|        3|       49|
+9       4065|        2|        0|        8|        0|        1|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.5861799438496743
+Class  2 (     Ground      ), IOU: 0.9734
+Class  5 ( High Vegetation ), IOU: 0.9775
+Class  6 (    Building     ), IOU: 0.9783
+Class  9 (      Water      ), IOU: 0.0018
+Class 17 (   Bridge Deck   ), IOU: 0.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_159_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_159_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 45592 unlabeled truth points
+411344
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_159_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_159_CLS.txt):
+Confusion matrix with overall accuracy: 97.96%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     252625|       28|      185|     2940|     1534|      305|
+5        135|   109611|      547|        0|      276|      101|
+6        237|      801|     8419|        0|        8|       32|
+9       1168|        7|        0|     6198|        1|       83|
+17       159|        2|        0|        0|    34491|        5|
+
+MIOU: 0.8643903068948434
+Class  2 (     Ground      ), IOU: 0.9742
+Class  5 ( High Vegetation ), IOU: 0.9830
+Class  6 (    Building     ), IOU: 0.8231
+Class  9 (      Water      ), IOU: 0.5961
+Class 17 (   Bridge Deck   ), IOU: 0.9456
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_161_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_161_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 16086 unlabeled truth points
+346077
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_161_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_161_CLS.txt):
+Confusion matrix with overall accuracy: 99.16%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     263132|        0|      170|      746|      114|        5|
+5         46|    24482|      704|        0|        5|       47|
+6        677|      196|    53974|        0|        0|       26|
+9        200|        0|        0|     1441|        0|        0|
+17         0|        0|        0|        0|     3048|       13|
+
+MIOU: 0.8967637308670211
+Class  2 (     Ground      ), IOU: 0.9926
+Class  5 ( High Vegetation ), IOU: 0.9608
+Class  6 (    Building     ), IOU: 0.9682
+Class  9 (      Water      ), IOU: 0.6037
+Class 17 (   Bridge Deck   ), IOU: 0.9585
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_164_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_164_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 13609 unlabeled truth points
+341425
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_164_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_164_CLS.txt):
+Confusion matrix with overall accuracy: 99.24%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     258288|        0|      303|        0|        0|       19|
+5         30|    18485|      640|        0|        0|       26|
+6        741|      796|    64652|        0|        0|       56|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9766710794829392
+Class  2 (     Ground      ), IOU: 0.9958
+Class  5 ( High Vegetation ), IOU: 0.9253
+Class  6 (    Building     ), IOU: 0.9623
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_165_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_165_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 20617 unlabeled truth points
+328671
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_165_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_165_CLS.txt):
+Confusion matrix with overall accuracy: 99.09%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     171827|        1|      407|        0|        0|       17|
+5         43|    17448|      849|        0|       80|       89|
+6        850|      527|   134798|        0|       78|       55|
+9          0|        0|        0|        0|        0|        0|
+17         0|        5|       18|        0|     4598|       16|
+
+MIOU: 0.9694717040918824
+Class  2 (     Ground      ), IOU: 0.9924
+Class  5 ( High Vegetation ), IOU: 0.9163
+Class  6 (    Building     ), IOU: 0.9798
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9589
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_166_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_166_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 37396 unlabeled truth points
+361602
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_166_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_166_CLS.txt):
+Confusion matrix with overall accuracy: 98.69%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     194052|        0|      698|      875|      193|       12|
+5         11|    20417|      515|        0|       71|       56|
+6       1616|      545|    96379|        1|        0|       30|
+9         89|        0|        0|    28415|       14|        6|
+17         3|        4|       25|        0|    22339|       18|
+
+MIOU: 0.9688718812371215
+Class  2 (     Ground      ), IOU: 0.9823
+Class  5 ( High Vegetation ), IOU: 0.9444
+Class  6 (    Building     ), IOU: 0.9656
+Class  9 (      Water      ), IOU: 0.9665
+Class 17 (   Bridge Deck   ), IOU: 0.9855
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_167_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_167_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 32413 unlabeled truth points
+352722
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_167_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_167_CLS.txt):
+Confusion matrix with overall accuracy: 98.60%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     157881|        0|      790|        7|      127|      175|
+5         55|    15547|     1159|        0|        0|       77|
+6       1717|      632|   139990|        2|        9|      103|
+9         53|        0|        0|    29437|        0|       14|
+17        29|        0|       35|        0|     9867|       39|
+
+MIOU: 0.9629104155154209
+Class  2 (     Ground      ), IOU: 0.9816
+Class  5 ( High Vegetation ), IOU: 0.8899
+Class  6 (    Building     ), IOU: 0.9692
+Class  9 (      Water      ), IOU: 0.9974
+Class 17 (   Bridge Deck   ), IOU: 0.9764
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_168_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_168_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 21942 unlabeled truth points
+326748
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_168_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_168_CLS.txt):
+Confusion matrix with overall accuracy: 98.41%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     235552|        0|      633|        3|      168|       28|
+5         67|    30944|     1285|        0|        0|       38|
+6       1207|     1648|    60201|        0|        0|       76|
+9        128|        0|        0|       51|        0|        1|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.6210701184274015
+Class  2 (     Ground      ), IOU: 0.9906
+Class  5 ( High Vegetation ), IOU: 0.9106
+Class  6 (    Building     ), IOU: 0.9255
+Class  9 (      Water      ), IOU: 0.2787
+Class 17 (   Bridge Deck   ), IOU: 0.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_175_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_175_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 14914 unlabeled truth points
+377260
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_175_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_175_CLS.txt):
+Confusion matrix with overall accuracy: 98.88%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     283227|       20|      157|        0|      515|       59|
+5         79|    51647|      462|        0|        4|       24|
+6       1202|     1575|    35985|        0|        2|       53|
+9          0|        0|        0|        0|        0|        0|
+17       118|        0|        0|        0|     6401|       13|
+
+MIOU: 0.9544598946096718
+Class  2 (     Ground      ), IOU: 0.9925
+Class  5 ( High Vegetation ), IOU: 0.9598
+Class  6 (    Building     ), IOU: 0.9125
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9076
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_178_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_178_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 27478 unlabeled truth points
+369832
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_178_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_178_CLS.txt):
+Confusion matrix with overall accuracy: 99.13%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     272078|        1|      378|       29|      315|       53|
+5         74|    57690|      517|        0|       20|       68|
+6        495|      918|    29049|        0|        0|       34|
+9         13|        0|        3|        0|        0|        0|
+17         0|      292|       24|        0|    11015|       14|
+
+MIOU: 0.7661947902872334
+Class  2 (     Ground      ), IOU: 0.9950
+Class  5 ( High Vegetation ), IOU: 0.9683
+Class  6 (    Building     ), IOU: 0.9246
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9431
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_179_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_179_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 28623 unlabeled truth points
+207766
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_179_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_179_CLS.txt):
+Confusion matrix with overall accuracy: 98.86%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2      93484|       12|      117|     1019|        0|       78|
+5         12|     8711|        0|        0|        0|        2|
+6        156|        9|    12345|        0|        0|        1|
+9        940|        1|        2|    78675|        0|       54|
+17         0|        0|        0|        0|    14551|        0|
+
+MIOU: 0.9847952207091575
+Class  2 (     Ground      ), IOU: 0.9756
+Class  5 ( High Vegetation ), IOU: 0.9959
+Class  6 (    Building     ), IOU: 0.9774
+Class  9 (      Water      ), IOU: 0.9750
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_203_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_203_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 70107 unlabeled truth points
+899532
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_203_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_203_CLS.txt):
+Confusion matrix with overall accuracy: 94.72%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     474040|        2|     1620|        0|        0|      198|
+5        226|   288807|    25177|        0|        0|      405|
+6       3677|    18598|   136685|        0|        0|      248|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9179291439294174
+Class  2 (     Ground      ), IOU: 0.9881
+Class  5 ( High Vegetation ), IOU: 0.8667
+Class  6 (    Building     ), IOU: 0.7348
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_204_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_204_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 58580 unlabeled truth points
+620898
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_204_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_204_CLS.txt):
+Confusion matrix with overall accuracy: 98.12%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     461691|        6|      751|      341|      584|       44|
+5         87|    89540|     3459|        0|        0|       85|
+6       1383|     4210|    57574|        0|        0|       81|
+9        762|        0|        0|     1380|        0|        0|
+17        98|        0|        0|        0|    10713|        1|
+
+MIOU: 0.8520082328626353
+Class  2 (     Ground      ), IOU: 0.9913
+Class  5 ( High Vegetation ), IOU: 0.9194
+Class  6 (    Building     ), IOU: 0.8535
+Class  9 (      Water      ), IOU: 0.5558
+Class 17 (   Bridge Deck   ), IOU: 0.9401
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_207_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_207_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 52753 unlabeled truth points
+816935
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_207_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_207_CLS.txt):
+Confusion matrix with overall accuracy: 98.49%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     504885|        0|     1034|      983|       10|       46|
+5        199|   152078|     3306|        0|      162|       92|
+6       2132|     3839|   113194|        0|        0|      144|
+9        362|        0|        0|     5875|        0|        0|
+17       132|       30|        6|        0|    40903|        6|
+
+MIOU: 0.932670955598988
+Class  2 (     Ground      ), IOU: 0.9904
+Class  5 ( High Vegetation ), IOU: 0.9522
+Class  6 (    Building     ), IOU: 0.9154
+Class  9 (      Water      ), IOU: 0.8137
+Class 17 (   Bridge Deck   ), IOU: 0.9916
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_212_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_212_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 43473 unlabeled truth points
+197392
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_212_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_212_CLS.txt):
+Confusion matrix with overall accuracy: 98.01%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2      25527|        0|       49|       40|        0|        0|
+5         18|     1519|        0|        0|        0|       17|
+6        137|       55|     4502|        0|        0|       47|
+9       3458|        0|        0|   113075|      100|       84|
+17         6|        0|        0|        0|    52769|        6|
+
+MIOU: 0.9446903112101313
+Class  2 (     Ground      ), IOU: 0.8732
+Class  5 ( High Vegetation ), IOU: 0.9441
+Class  6 (    Building     ), IOU: 0.9399
+Class  9 (      Water      ), IOU: 0.9685
+Class 17 (   Bridge Deck   ), IOU: 0.9979
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_214_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_214_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 64056 unlabeled truth points
+653122
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_214_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_214_CLS.txt):
+Confusion matrix with overall accuracy: 98.97%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     298977|        0|      925|      136|      953|      125|
+5          6|    24459|      900|        0|        0|      112|
+6       1945|      466|   226703|       32|      116|      158|
+9        667|        0|        0|    69813|        4|      104|
+17        72|        0|       45|        0|    33170|       63|
+
+MIOU: 0.9714685683269737
+Class  2 (     Ground      ), IOU: 0.9841
+Class  5 ( High Vegetation ), IOU: 0.9428
+Class  6 (    Building     ), IOU: 0.9802
+Class  9 (      Water      ), IOU: 0.9867
+Class 17 (   Bridge Deck   ), IOU: 0.9636
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_224_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_224_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 40630 unlabeled truth points
+590836
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_224_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_224_CLS.txt):
+Confusion matrix with overall accuracy: 99.42%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     486403|        0|      613|      980|       34|       42|
+5         39|    16485|      286|        0|       56|       50|
+6        774|      225|    42381|        0|        8|       25|
+9         36|        0|        0|        0|        0|        0|
+17       100|       40|       79|        0|    45567|       37|
+
+MIOU: 0.78022964824664
+Class  2 (     Ground      ), IOU: 0.9946
+Class  5 ( High Vegetation ), IOU: 0.9595
+Class  6 (    Building     ), IOU: 0.9547
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9923
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_236_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_236_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 27722 unlabeled truth points
+449608
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_236_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_236_CLS.txt):
+Confusion matrix with overall accuracy: 96.42%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     173172|       14|      558|     2804|       76|      126|
+5        286|   180078|     1293|        0|        0|      201|
+6       1073|     6345|    33843|        0|        0|      102|
+9       3627|       13|        0|    38426|       53|       35|
+17        27|       27|        0|        2|    24089|       23|
+
+MIOU: 0.9077096595637965
+Class  2 (     Ground      ), IOU: 0.9527
+Class  5 ( High Vegetation ), IOU: 0.9566
+Class  6 (    Building     ), IOU: 0.7831
+Class  9 (      Water      ), IOU: 0.8547
+Class 17 (   Bridge Deck   ), IOU: 0.9914
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_240_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_240_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 56484 unlabeled truth points
+913031
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_240_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_240_CLS.txt):
+Confusion matrix with overall accuracy: 95.77%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     438696|       38|     2070|        0|        0|      222|
+5        256|   343619|    11070|        0|        0|      432|
+6       3538|    22435|   130716|        0|        0|      270|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9328217217054402
+Class  2 (     Ground      ), IOU: 0.9862
+Class  5 ( High Vegetation ), IOU: 0.9094
+Class  6 (    Building     ), IOU: 0.7685
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_251_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_251_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 40571 unlabeled truth points
+813135
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_251_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_251_CLS.txt):
+Confusion matrix with overall accuracy: 97.64%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     305063|        2|     1193|      182|        0|       68|
+5        121|   128194|     5859|        0|        0|      184|
+6       5193|     6235|   263244|        0|        0|      166|
+9        464|        0|        0|   116634|        0|       10|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9633855022902953
+Class  2 (     Ground      ), IOU: 0.9769
+Class  5 ( High Vegetation ), IOU: 0.9118
+Class  6 (    Building     ), IOU: 0.9339
+Class  9 (      Water      ), IOU: 0.9944
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_260_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_260_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 39883 unlabeled truth points
+664364
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_260_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_260_CLS.txt):
+Confusion matrix with overall accuracy: 97.52%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     268516|        0|      912|      599|        2|       96|
+5         50|    92735|     4175|        0|       10|       87|
+6       2459|     6990|    76564|        0|        6|       82|
+9       1343|        0|        6|   147482|        0|        0|
+17         0|       50|       38|        0|    79067|       16|
+
+MIOU: 0.9391131457924266
+Class  2 (     Ground      ), IOU: 0.9801
+Class  5 ( High Vegetation ), IOU: 0.8909
+Class  6 (    Building     ), IOU: 0.8392
+Class  9 (      Water      ), IOU: 0.9870
+Class 17 (   Bridge Deck   ), IOU: 0.9985
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_264_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_264_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 64588 unlabeled truth points
+715108
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_264_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_264_CLS.txt):
+Confusion matrix with overall accuracy: 98.09%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     467698|       14|      503|     4729|      629|      243|
+5        133|    99752|     1145|        0|       21|      151|
+6       1760|     3740|    84083|        0|        8|      212|
+9         34|        0|        0|        0|        0|        0|
+17       571|        0|        6|        0|    63575|        8|
+
+MIOU: 0.7665047166794443
+Class  2 (     Ground      ), IOU: 0.9819
+Class  5 ( High Vegetation ), IOU: 0.9504
+Class  6 (    Building     ), IOU: 0.9194
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9808
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_269_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_269_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 37912 unlabeled truth points
+759970
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_269_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_269_CLS.txt):
+Confusion matrix with overall accuracy: 96.96%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     282253|       16|     1114|     6235|        0|      185|
+5        262|   239068|     5772|        0|        0|      155|
+6       1979|     7096|    50366|        0|        0|      106|
+9        942|        0|        0|   188283|        0|        2|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9264162436964221
+Class  2 (     Ground      ), IOU: 0.9634
+Class  5 ( High Vegetation ), IOU: 0.9473
+Class  6 (    Building     ), IOU: 0.7581
+Class  9 (      Water      ), IOU: 0.9633
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_273_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_273_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 54853 unlabeled truth points
+791131
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_273_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_273_CLS.txt):
+Confusion matrix with overall accuracy: 97.24%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     234322|      259|      704|     5087|        0|      597|
+5        335|   308422|     2974|        3|        0|      204|
+6        859|     6743|    34168|        0|        0|       84|
+9       1477|       33|        0|   195298|        0|      111|
+17      1149|        0|      133|       80|    18921|     1629|
+
+MIOU: 0.9004579648710476
+Class  2 (     Ground      ), IOU: 0.9572
+Class  5 ( High Vegetation ), IOU: 0.9669
+Class  6 (    Building     ), IOU: 0.7482
+Class  9 (      Water      ), IOU: 0.9664
+Class 17 (   Bridge Deck   ), IOU: 0.8635
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_276_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_276_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 44014 unlabeled truth points
+842937
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_276_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_276_CLS.txt):
+Confusion matrix with overall accuracy: 96.84%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     415385|       44|      863|     1281|       66|      496|
+5        289|   313691|     5914|        0|        0|      371|
+6       2134|    15085|    91282|        0|        0|      220|
+9        637|        2|        0|    17616|        0|       53|
+17        12|       10|        0|        0|     4963|        0|
+
+MIOU: 0.9187254666840081
+Class  2 (     Ground      ), IOU: 0.9862
+Class  5 ( High Vegetation ), IOU: 0.9353
+Class  6 (    Building     ), IOU: 0.7903
+Class  9 (      Water      ), IOU: 0.8993
+Class 17 (   Bridge Deck   ), IOU: 0.9826
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_280_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_280_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 46183 unlabeled truth points
+703130
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_280_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_280_CLS.txt):
+Confusion matrix with overall accuracy: 96.76%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     292675|       75|     1255|     3540|      655|      389|
+5        438|   264984|     3481|       13|        0|      254|
+6       2548|     9337|    84850|        0|        0|      106|
+9       1317|       11|        0|    54903|        0|       56|
+17        26|       14|        0|        0|     5718|       12|
+
+MIOU: 0.9120146754628269
+Class  2 (     Ground      ), IOU: 0.9662
+Class  5 ( High Vegetation ), IOU: 0.9511
+Class  6 (    Building     ), IOU: 0.8353
+Class  9 (      Water      ), IOU: 0.9175
+Class 17 (   Bridge Deck   ), IOU: 0.8900
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_314_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_314_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 37655 unlabeled truth points
+482522
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_314_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_314_CLS.txt):
+Confusion matrix with overall accuracy: 96.86%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     246049|       15|     1123|      275|        0|      155|
+5        221|   181673|     3790|        0|        0|      240|
+6       2127|     6754|    53798|        0|        0|      135|
+9        799|        0|        6|     1002|        0|        2|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.839815981423832
+Class  2 (     Ground      ), IOU: 0.9812
+Class  5 ( High Vegetation ), IOU: 0.9428
+Class  6 (    Building     ), IOU: 0.7943
+Class  9 (      Water      ), IOU: 0.4808
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_359_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_359_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 30470 unlabeled truth points
+339102
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_359_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_359_CLS.txt):
+Confusion matrix with overall accuracy: 96.20%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     147084|       12|      566|     1489|        0|      110|
+5        209|   146916|     3443|        1|        0|      180|
+6       1053|     5390|    36895|        0|        0|       51|
+9        850|        1|        0|     8207|        0|       28|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.8933858321394194
+Class  2 (     Ground      ), IOU: 0.9717
+Class  5 ( High Vegetation ), IOU: 0.9409
+Class  6 (    Building     ), IOU: 0.7784
+Class  9 (      Water      ), IOU: 0.7760
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_412_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_412_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 25918 unlabeled truth points
+518470
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_412_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_412_CLS.txt):
+Confusion matrix with overall accuracy: 98.15%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     271608|        5|      640|      240|        0|       59|
+5        262|   194883|     2384|        0|        0|      142|
+6       1009|     4764|    51954|        0|        0|       68|
+9        174|        0|        0|       25|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7730277169125369
+Class  2 (     Ground      ), IOU: 0.9913
+Class  5 ( High Vegetation ), IOU: 0.9627
+Class  6 (    Building     ), IOU: 0.8542
+Class  9 (      Water      ), IOU: 0.0569
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_416_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_416_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 29471 unlabeled truth points
+460149
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_416_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_416_CLS.txt):
+Confusion matrix with overall accuracy: 98.23%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     279040|       23|      379|      858|        0|       57|
+5        180|   108594|      905|        0|        0|       75|
+6        832|     2967|    68322|        0|        0|       28|
+9       1998|        0|        0|     4193|        0|        1|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.8946143815968627
+Class  2 (     Ground      ), IOU: 0.9847
+Class  5 ( High Vegetation ), IOU: 0.9632
+Class  6 (    Building     ), IOU: 0.9304
+Class  9 (      Water      ), IOU: 0.5948
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_427_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_427_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 30504 unlabeled truth points
+526997
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_427_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_427_CLS.txt):
+Confusion matrix with overall accuracy: 97.36%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     308809|        3|     1083|        0|        0|       72|
+5         65|   131295|     2833|        0|        0|      119|
+6       1788|     8249|    86893|        0|        0|       61|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9544836464304789
+Class  2 (     Ground      ), IOU: 0.9903
+Class  5 ( High Vegetation ), IOU: 0.9210
+Class  6 (    Building     ), IOU: 0.8611
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_467_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_467_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 26467 unlabeled truth points
+403466
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_467_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_467_CLS.txt):
+Confusion matrix with overall accuracy: 98.37%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     222966|        2|      609|     1750|        0|      281|
+5        193|    95569|     1673|        1|        0|      205|
+6       1129|      764|    84931|        0|       13|       50|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.5812329836534319
+Class  2 (     Ground      ), IOU: 0.9825
+Class  5 ( High Vegetation ), IOU: 0.9712
+Class  6 (    Building     ), IOU: 0.9525
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 0.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_474_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_474_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 17342 unlabeled truth points
+337046
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_474_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_474_CLS.txt):
+Confusion matrix with overall accuracy: 97.69%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     250807|        1|      366|      460|      138|       17|
+5        123|    38488|     1817|        0|        1|       47|
+6        907|     3974|    45845|        0|        0|       22|
+9        109|        0|        0|      563|        0|        0|
+17         2|        0|        0|        0|     1343|        0|
+
+MIOU: 0.8251845212816598
+Class  2 (     Ground      ), IOU: 0.9916
+Class  5 ( High Vegetation ), IOU: 0.8659
+Class  6 (    Building     ), IOU: 0.8661
+Class  9 (      Water      ), IOU: 0.4973
+Class 17 (   Bridge Deck   ), IOU: 0.9050
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_505_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_505_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 27902 unlabeled truth points
+478622
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_505_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_505_CLS.txt):
+Confusion matrix with overall accuracy: 96.80%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     238934|       20|      743|      476|        0|      161|
+5        208|   178161|     2622|       10|        0|      181|
+6       1362|     9545|    53902|        0|        0|       96|
+9        384|        2|        0|     7625|        0|       13|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9211421429190356
+Class  2 (     Ground      ), IOU: 0.9862
+Class  5 ( High Vegetation ), IOU: 0.9340
+Class  6 (    Building     ), IOU: 0.7895
+Class  9 (      Water      ), IOU: 0.8960
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_559_CLS.txt against pointnet2/data/dfc/inference_data/gt/JAX_559_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 25849 unlabeled truth points
+393755
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/JAX_559_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/JAX_559_CLS.txt):
+Confusion matrix with overall accuracy: 95.05%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     177003|       19|      903|        0|        0|      101|
+5        261|   151101|     2915|        0|        0|      276|
+6       1433|    11123|    65651|        0|        0|       70|
+9       3410|        3|        0|        0|        0|        4|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7356288730880118
+Class  2 (     Ground      ), IOU: 0.9665
+Class  5 ( High Vegetation ), IOU: 0.9119
+Class  6 (    Building     ), IOU: 0.7997
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_026_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_026_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 32992 unlabeled truth points
+413498
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_026_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_026_CLS.txt):
+Confusion matrix with overall accuracy: 98.73%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     294369|       93|       28|      108|        0|       62|
+5        459|   110069|       23|        1|        0|      109|
+6        167|      659|     1969|        0|        0|       32|
+9       3483|       21|        0|     7091|        0|       81|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.8629332828756671
+Class  2 (     Ground      ), IOU: 0.9853
+Class  5 ( High Vegetation ), IOU: 0.9878
+Class  6 (    Building     ), IOU: 0.6842
+Class  9 (      Water      ), IOU: 0.6575
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_042_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_042_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 36738 unlabeled truth points
+1035442
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_042_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_042_CLS.txt):
+Confusion matrix with overall accuracy: 98.00%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     699048|        0|     1075|        0|        0|       28|
+5        172|   195360|     7011|        0|        0|      185|
+6       2881|     9436|   141034|        0|        0|       74|
+9        259|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7575474181731076
+Class  2 (     Ground      ), IOU: 0.9937
+Class  5 ( High Vegetation ), IOU: 0.9208
+Class  6 (    Building     ), IOU: 0.8732
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_059_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_059_CLS.txt:
+Skipped 469 unlabeled truth points
+577744
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_059_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_059_CLS.txt):
+Confusion matrix with overall accuracy: 100.00%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     577744|        0|        0|        0|        0|        0|
+5          0|        0|        0|        0|        0|        0|
+6          0|        0|        0|        0|        0|        0|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 1.0
+Class  2 (     Ground      ), IOU: 1.0000
+Class  5 ( High Vegetation ), IOU: 1.0000
+Class  6 (    Building     ), IOU: 1.0000
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_064_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_064_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 46773 unlabeled truth points
+574264
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_064_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_064_CLS.txt):
+Confusion matrix with overall accuracy: 98.68%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     497498|       37|       21|     6209|        0|      100|
+5        289|    70068|        2|        7|        0|       58|
+6          0|        0|        0|        0|        0|        0|
+9        893|       24|        0|     6698|        0|       14|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.6925842967470428
+Class  2 (     Ground      ), IOU: 0.9851
+Class  5 ( High Vegetation ), IOU: 0.9941
+Class  6 (    Building     ), IOU: 0.0000
+Class  9 (      Water      ), IOU: 0.4838
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_070_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_070_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 30413 unlabeled truth points
+529574
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_070_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_070_CLS.txt):
+Confusion matrix with overall accuracy: 99.83%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     414818|       30|       22|      151|        0|      103|
+5        408|   113749|        1|        0|        0|      130|
+6          0|        0|        0|        0|        0|        0|
+9         45|        0|        0|     1007|        0|        1|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7659150034603555
+Class  2 (     Ground      ), IOU: 0.9982
+Class  5 ( High Vegetation ), IOU: 0.9950
+Class  6 (    Building     ), IOU: 0.0000
+Class  9 (      Water      ), IOU: 0.8364
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_084_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_084_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 28382 unlabeled truth points
+517365
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_084_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_084_CLS.txt):
+Confusion matrix with overall accuracy: 99.12%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     366011|       14|      147|       19|       37|       18|
+5        289|   128170|      986|        0|       10|      139|
+6        435|     2388|    21731|        0|        0|       54|
+9          0|        0|        0|        0|        0|        0|
+17        40|        0|        0|        0|     1453|        2|
+
+MIOU: 0.7509584845062491
+Class  2 (     Ground      ), IOU: 0.9973
+Class  5 ( High Vegetation ), IOU: 0.9710
+Class  6 (    Building     ), IOU: 0.8442
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9423
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_108_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_108_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 60800 unlabeled truth points
+732880
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_108_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_108_CLS.txt):
+Confusion matrix with overall accuracy: 99.63%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     481852|       60|        1|     2131|        0|       65|
+5        221|   249904|       20|       13|        0|       72|
+6          0|        0|        0|        0|        0|        0|
+9        109|        0|        0|     1124|        0|        6|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.665073414808359
+Class  2 (     Ground      ), IOU: 0.9947
+Class  5 ( High Vegetation ), IOU: 0.9985
+Class  6 (    Building     ), IOU: 0.0000
+Class  9 (      Water      ), IOU: 0.3322
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_124_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_124_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 22474 unlabeled truth points
+653195
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_124_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_124_CLS.txt):
+Confusion matrix with overall accuracy: 98.57%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     398132|        0|      834|        0|        0|       12|
+5        298|    79176|     2533|        0|        0|      109|
+6       2011|     3580|   175887|        0|        0|       66|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9734506085852876
+Class  2 (     Ground      ), IOU: 0.9921
+Class  5 ( High Vegetation ), IOU: 0.9239
+Class  6 (    Building     ), IOU: 0.9512
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_129_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_129_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 14450 unlabeled truth points
+496152
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_129_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_129_CLS.txt):
+Confusion matrix with overall accuracy: 99.40%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     371050|        6|      188|      364|        0|       70|
+5        920|    94623|      113|        2|        0|       20|
+6        199|       32|    12729|        0|        0|        9|
+9       1070|        0|        0|    17750|        0|       25|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9728454411647631
+Class  2 (     Ground      ), IOU: 0.9925
+Class  5 ( High Vegetation ), IOU: 0.9886
+Class  6 (    Building     ), IOU: 0.9592
+Class  9 (      Water      ), IOU: 0.9239
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_130_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_130_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 33363 unlabeled truth points
+537152
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_130_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_130_CLS.txt):
+Confusion matrix with overall accuracy: 99.47%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     454082|      164|       17|     1818|        1|      101|
+5        392|    52665|       29|        3|        0|       43|
+6          0|        0|        0|        0|        0|        0|
+9        251|        1|        0|    30405|        0|       17|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.5835635341988947
+Class  2 (     Ground      ), IOU: 0.9940
+Class  5 ( High Vegetation ), IOU: 0.9881
+Class  6 (    Building     ), IOU: 0.0000
+Class  9 (      Water      ), IOU: 0.9357
+Class 17 (   Bridge Deck   ), IOU: 0.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_132_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_132_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 21729 unlabeled truth points
+438878
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_132_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_132_CLS.txt):
+Confusion matrix with overall accuracy: 97.69%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     302295|        0|      610|     2220|        0|       53|
+5         93|    48340|     1851|        0|        0|       93|
+6       1280|     2902|    76948|        0|        0|       59|
+9       1220|        2|        0|    11295|        0|       11|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9150439633801275
+Class  2 (     Ground      ), IOU: 0.9822
+Class  5 ( High Vegetation ), IOU: 0.9073
+Class  6 (    Building     ), IOU: 0.9199
+Class  9 (      Water      ), IOU: 0.7659
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_134_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_134_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 32794 unlabeled truth points
+765731
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_134_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_134_CLS.txt):
+Confusion matrix with overall accuracy: 97.66%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     538257|        6|     1508|     2655|        0|      101|
+5        169|   128785|     4944|        3|        0|       63|
+6       2580|     6128|    88127|        0|        0|      123|
+9         79|        0|        0|    10562|        0|        8|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9104322500835826
+Class  2 (     Ground      ), IOU: 0.9870
+Class  5 ( High Vegetation ), IOU: 0.9192
+Class  6 (    Building     ), IOU: 0.8522
+Class  9 (      Water      ), IOU: 0.7937
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_142_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_142_CLS.txt:
+Skipped 2498 unlabeled truth points
+966590
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_142_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_142_CLS.txt):
+Confusion matrix with overall accuracy: 100.00%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     964794|        0|        1|        0|        0|        0|
+5          0|        0|        0|        0|        0|        0|
+6         15|        0|     1796|        0|        0|        0|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9982306788697809
+Class  2 (     Ground      ), IOU: 1.0000
+Class  5 ( High Vegetation ), IOU: 1.0000
+Class  6 (    Building     ), IOU: 0.9912
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_144_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_144_CLS.txt:
+Skipped 203 unlabeled truth points
+496335
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_144_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_144_CLS.txt):
+Confusion matrix with overall accuracy: 100.00%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     496335|        0|        1|        0|        0|        0|
+5          0|        0|        0|        0|        0|        0|
+6          0|        0|        0|        0|        0|        0|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7999995970471616
+Class  2 (     Ground      ), IOU: 1.0000
+Class  5 ( High Vegetation ), IOU: 1.0000
+Class  6 (    Building     ), IOU: 0.0000
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_150_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_150_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 83303 unlabeled truth points
+590814
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_150_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_150_CLS.txt):
+Confusion matrix with overall accuracy: 99.03%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     417449|      167|       72|     3887|        0|      155|
+5        188|   172579|        4|        0|        0|       69|
+6          0|        0|        0|        0|        0|        0|
+9       1216|        0|        0|      786|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.6235119662650922
+Class  2 (     Ground      ), IOU: 0.9866
+Class  5 ( High Vegetation ), IOU: 0.9975
+Class  6 (    Building     ), IOU: 0.0000
+Class  9 (      Water      ), IOU: 0.1335
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_151_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_151_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 15560 unlabeled truth points
+632361
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_151_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_151_CLS.txt):
+Confusion matrix with overall accuracy: 99.23%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     595861|       18|       30|     3123|        0|       17|
+5        164|    31286|        0|        0|        0|       12|
+6          0|        0|        0|        0|        0|        0|
+9       1560|        0|        0|     5214|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7024975069947103
+Class  2 (     Ground      ), IOU: 0.9918
+Class  5 ( High Vegetation ), IOU: 0.9938
+Class  6 (    Building     ), IOU: 0.0000
+Class  9 (      Water      ), IOU: 0.5268
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_163_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_163_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 19190 unlabeled truth points
+522669
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_163_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_163_CLS.txt):
+Confusion matrix with overall accuracy: 99.03%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     403146|       34|      325|        0|        2|       27|
+5        198|    67634|     1217|        0|       19|      147|
+6        704|     2203|    50145|        0|        0|       51|
+9          0|        0|        0|        0|        0|        0|
+17       181|        0|        0|        0|     1744|        2|
+
+MIOU: 0.9511714970614392
+Class  2 (     Ground      ), IOU: 0.9964
+Class  5 ( High Vegetation ), IOU: 0.9466
+Class  6 (    Building     ), IOU: 0.9177
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 0.8953
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_172_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_172_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 23542 unlabeled truth points
+628498
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_172_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_172_CLS.txt):
+Confusion matrix with overall accuracy: 97.25%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     466540|        0|     2659|        0|        0|       63|
+5         84|    56068|     4560|        0|        0|      107|
+6       3457|     6789|   105890|        0|        0|       81|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9347834142962359
+Class  2 (     Ground      ), IOU: 0.9868
+Class  5 ( High Vegetation ), IOU: 0.8293
+Class  6 (    Building     ), IOU: 0.8579
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_176_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_176_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 15022 unlabeled truth points
+394428
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_176_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_176_CLS.txt):
+Confusion matrix with overall accuracy: 98.84%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     333401|        5|      423|     1481|        0|      315|
+5        107|    36657|      273|       11|        0|       51|
+6        162|      347|     9270|        0|        0|       20|
+9       1349|        0|        0|    15100|        0|       91|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.937616902792571
+Class  2 (     Ground      ), IOU: 0.9886
+Class  5 ( High Vegetation ), IOU: 0.9788
+Class  6 (    Building     ), IOU: 0.8833
+Class  9 (      Water      ), IOU: 0.8374
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_181_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_181_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 1026 unlabeled truth points
+434469
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_181_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_181_CLS.txt):
+Confusion matrix with overall accuracy: 99.98%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     432597|        0|        0|       15|        0|        8|
+5         60|     1708|        0|        0|        0|        7|
+6          1|        0|      164|        0|        0|        0|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7911997553318675
+Class  2 (     Ground      ), IOU: 0.9998
+Class  5 ( High Vegetation ), IOU: 0.9623
+Class  6 (    Building     ), IOU: 0.9939
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_198_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_198_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 82128 unlabeled truth points
+1179670
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_198_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_198_CLS.txt):
+Confusion matrix with overall accuracy: 97.79%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     680671|      309|     3310|        0|        0|      210|
+5       1322|   387934|     4508|        0|        0|      309|
+6       4724|    11802|   111065|        0|        0|      127|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9520439056531178
+Class  2 (     Ground      ), IOU: 0.9857
+Class  5 ( High Vegetation ), IOU: 0.9551
+Class  6 (    Building     ), IOU: 0.8195
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_203_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_203_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 28810 unlabeled truth points
+1599871
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_203_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_203_CLS.txt):
+Confusion matrix with overall accuracy: 99.56%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1296363|        4|      694|        0|      187|       23|
+5         79|   147457|     1587|        0|        0|       44|
+6       1784|     2566|   150884|        0|        0|      123|
+9          0|        0|        0|        0|        0|        0|
+17        20|        0|        0|        0|     5167|        0|
+
+MIOU: 0.977656237123018
+Class  2 (     Ground      ), IOU: 0.9979
+Class  5 ( High Vegetation ), IOU: 0.9718
+Class  6 (    Building     ), IOU: 0.9572
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9615
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_211_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_211_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 63678 unlabeled truth points
+1428392
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_211_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_211_CLS.txt):
+Confusion matrix with overall accuracy: 99.54%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1250263|       42|      932|     1490|      686|      173|
+5        150|   103820|      576|        0|        0|       47|
+6        745|     1224|    56376|        0|        0|       75|
+9        303|        0|        0|      868|        0|        0|
+17       183|        0|        0|        0|    17065|        2|
+
+MIOU: 0.8390701413502283
+Class  2 (     Ground      ), IOU: 0.9963
+Class  5 ( High Vegetation ), IOU: 0.9807
+Class  6 (    Building     ), IOU: 0.9407
+Class  9 (      Water      ), IOU: 0.3262
+Class 17 (   Bridge Deck   ), IOU: 0.9514
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_212_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_212_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 18615 unlabeled truth points
+1295020
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_212_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_212_CLS.txt):
+Confusion matrix with overall accuracy: 99.83%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1169314|        9|       38|      111|        0|       23|
+5        287|    32966|       26|        0|        0|       34|
+6       1138|       62|    92733|        0|        0|      121|
+9        310|        0|        0|        7|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7974965430365908
+Class  2 (     Ground      ), IOU: 0.9984
+Class  5 ( High Vegetation ), IOU: 0.9875
+Class  6 (    Building     ), IOU: 0.9853
+Class  9 (      Water      ), IOU: 0.0164
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_221_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_221_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 53363 unlabeled truth points
+654410
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_221_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_221_CLS.txt):
+Confusion matrix with overall accuracy: 99.49%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     429163|       64|      108|     1906|        0|       65|
+5        361|   210713|      119|        0|      109|       70|
+6        138|      317|     7549|        0|        0|       45|
+9          7|        0|        0|      223|        8|        4|
+17         0|       25|        0|        0|     6762|        0|
+
+MIOU: 0.7968483767001004
+Class  2 (     Ground      ), IOU: 0.9939
+Class  5 ( High Vegetation ), IOU: 0.9950
+Class  6 (    Building     ), IOU: 0.9122
+Class  9 (      Water      ), IOU: 0.1038
+Class 17 (   Bridge Deck   ), IOU: 0.9794
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_225_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_225_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 25821 unlabeled truth points
+714334
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_225_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_225_CLS.txt):
+Confusion matrix with overall accuracy: 99.52%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     588895|        1|      270|      480|      119|       12|
+5        128|    97211|      857|        0|        0|       51|
+6        520|      874|    20716|        0|        0|       12|
+9         32|        0|        0|     1170|        0|        0|
+17        60|        0|        0|        0|     6342|        0|
+
+MIOU: 0.9074347515411854
+Class  2 (     Ground      ), IOU: 0.9973
+Class  5 ( High Vegetation ), IOU: 0.9807
+Class  6 (    Building     ), IOU: 0.8910
+Class  9 (      Water      ), IOU: 0.6956
+Class 17 (   Bridge Deck   ), IOU: 0.9726
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_230_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_230_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 23638 unlabeled truth points
+744380
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_230_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_230_CLS.txt):
+Confusion matrix with overall accuracy: 98.79%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     578731|        0|      842|        0|        0|       10|
+5        129|    66511|     2244|        0|        0|       94|
+6       1608|     4152|    99138|        0|        1|       65|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7645111918064226
+Class  2 (     Ground      ), IOU: 0.9955
+Class  5 ( High Vegetation ), IOU: 0.9095
+Class  6 (    Building     ), IOU: 0.9175
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 0.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_244_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_244_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 55421 unlabeled truth points
+2212122
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_244_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_244_CLS.txt):
+Confusion matrix with overall accuracy: 99.49%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1624409|        6|     3061|        0|        0|      242|
+5         32|    57409|     1094|        0|        0|       39|
+6       5695|     1026|   530304|        0|        0|       44|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9874865877908287
+Class  2 (     Ground      ), IOU: 0.9945
+Class  5 ( High Vegetation ), IOU: 0.9631
+Class  6 (    Building     ), IOU: 0.9798
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_247_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_247_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 68423 unlabeled truth points
+1990596
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_247_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_247_CLS.txt):
+Confusion matrix with overall accuracy: 99.55%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1448699|        4|     2539|        0|      280|      464|
+5         29|    75317|     1508|        0|      157|       86|
+6       2469|     1292|   316497|        0|        0|       53|
+9          0|        0|        0|        0|        0|        0|
+17        46|        0|        0|        0|   150083|        0|
+
+MIOU: 0.9858618970406852
+Class  2 (     Ground      ), IOU: 0.9960
+Class  5 ( High Vegetation ), IOU: 0.9608
+Class  6 (    Building     ), IOU: 0.9758
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9968
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_248_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_248_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 51231 unlabeled truth points
+2117980
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_248_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_248_CLS.txt):
+Confusion matrix with overall accuracy: 98.03%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1601766|        0|     1637|       10|        0|       75|
+5          3|    24074|      255|        0|        0|       39|
+6      39851|      752|   492140|        0|        0|       15|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7706871617902871
+Class  2 (     Ground      ), IOU: 0.9747
+Class  5 ( High Vegetation ), IOU: 0.9582
+Class  6 (    Building     ), IOU: 0.9205
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_251_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_251_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 50076 unlabeled truth points
+1466234
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_251_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_251_CLS.txt):
+Confusion matrix with overall accuracy: 99.77%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1021546|        0|      472|        0|        7|       12|
+5         18|    12668|      283|        0|        0|       11|
+6       1652|       87|   390699|        0|      160|      264|
+9        202|        0|        0|      818|        0|        0|
+17        24|       13|      110|        0|    40503|        0|
+
+MIOU: 0.9505495250242273
+Class  2 (     Ground      ), IOU: 0.9977
+Class  5 ( High Vegetation ), IOU: 0.9685
+Class  6 (    Building     ), IOU: 0.9923
+Class  9 (      Water      ), IOU: 0.8020
+Class 17 (   Bridge Deck   ), IOU: 0.9923
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_258_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_258_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 16961 unlabeled truth points
+421044
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_258_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_258_CLS.txt):
+Confusion matrix with overall accuracy: 99.04%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     358598|        0|      321|        2|      242|       27|
+5        125|    34714|     1282|        8|        1|       96|
+6        538|     1339|    21452|        0|        0|       38|
+9          0|        0|        0|        0|        0|        0|
+17        46|        0|        0|        0|     6280|        0|
+
+MIOU: 0.7471212790404281
+Class  2 (     Ground      ), IOU: 0.9964
+Class  5 ( High Vegetation ), IOU: 0.9241
+Class  6 (    Building     ), IOU: 0.8591
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9560
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_269_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_269_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 27248 unlabeled truth points
+707173
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_269_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_269_CLS.txt):
+Confusion matrix with overall accuracy: 98.85%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     575610|       13|      808|        0|      289|       12|
+5         41|    52314|     1655|        0|        0|       49|
+6       1533|     3754|    74370|        0|        0|       53|
+9         17|        0|        0|        0|        0|        0|
+17        12|        0|        0|        0|     4879|        0|
+
+MIOU: 0.7493802895738976
+Class  2 (     Ground      ), IOU: 0.9953
+Class  5 ( High Vegetation ), IOU: 0.9047
+Class  6 (    Building     ), IOU: 0.9050
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9419
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_276_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_276_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 59061 unlabeled truth points
+736442
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_276_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_276_CLS.txt):
+Confusion matrix with overall accuracy: 96.33%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     421852|       51|     1398|        1|        0|      124|
+5        773|   210951|     6114|        0|        0|      467|
+6       5573|    13268|   103639|        0|        0|      288|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7375657772847881
+Class  2 (     Ground      ), IOU: 0.9816
+Class  5 ( High Vegetation ), IOU: 0.9107
+Class  6 (    Building     ), IOU: 0.7955
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_278_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_278_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 36498 unlabeled truth points
+766297
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_278_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_278_CLS.txt):
+Confusion matrix with overall accuracy: 97.56%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     429935|      215|     1694|        0|        0|      162|
+5       1038|   112502|     2722|        0|        0|      224|
+6       4955|     7953|   223860|        0|        0|      234|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9622749059800292
+Class  2 (     Ground      ), IOU: 0.9816
+Class  5 ( High Vegetation ), IOU: 0.9025
+Class  6 (    Building     ), IOU: 0.9273
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_281_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_281_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 49699 unlabeled truth points
+1555328
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_281_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_281_CLS.txt):
+Confusion matrix with overall accuracy: 99.49%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1172783|       47|     1776|       48|      922|      196|
+5         70|   104584|      956|        0|        2|       17|
+6       2046|     1653|   252294|        0|        0|       39|
+9         54|        0|        0|      501|        0|        1|
+17        67|        0|        0|        0|    25166|        8|
+
+MIOU: 0.9472548158336027
+Class  2 (     Ground      ), IOU: 0.9956
+Class  5 ( High Vegetation ), IOU: 0.9744
+Class  6 (    Building     ), IOU: 0.9750
+Class  9 (      Water      ), IOU: 0.8295
+Class 17 (   Bridge Deck   ), IOU: 0.9618
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_287_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_287_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 61747 unlabeled truth points
+2135169
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_287_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_287_CLS.txt):
+Confusion matrix with overall accuracy: 99.07%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1342752|       24|     7057|        0|        0|      109|
+5         93|    67014|     2884|        0|        0|       63|
+6       7489|     2155|   725403|        0|        0|       82|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9780939904455428
+Class  2 (     Ground      ), IOU: 0.9891
+Class  5 ( High Vegetation ), IOU: 0.9277
+Class  6 (    Building     ), IOU: 0.9736
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_288_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_288_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 70633 unlabeled truth points
+2089241
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_288_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_288_CLS.txt):
+Confusion matrix with overall accuracy: 99.11%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1291655|       33|     2331|     5880|      358|      246|
+5        103|   141796|     1869|        0|       20|      148|
+6       4913|     2116|   608730|        0|        0|      206|
+9        326|        0|        0|    37552|        0|        0|
+17       112|        0|        0|        0|     9508|       10|
+
+MIOU: 0.949892971310225
+Class  2 (     Ground      ), IOU: 0.9890
+Class  5 ( High Vegetation ), IOU: 0.9706
+Class  6 (    Building     ), IOU: 0.9816
+Class  9 (      Water      ), IOU: 0.8582
+Class 17 (   Bridge Deck   ), IOU: 0.9500
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_292_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_292_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 84420 unlabeled truth points
+933148
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_292_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_292_CLS.txt):
+Confusion matrix with overall accuracy: 98.72%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     644206|       63|       56|     8995|      467|      145|
+5        229|   208797|        2|        0|       27|      302|
+6         18|        9|      733|        0|        0|        9|
+9       1065|        4|        0|    12245|        1|       15|
+17       501|       39|        2|        0|    67167|      178|
+
+MIOU: 0.8788198139993268
+Class  2 (     Ground      ), IOU: 0.9824
+Class  5 ( High Vegetation ), IOU: 0.9968
+Class  6 (    Building     ), IOU: 0.8842
+Class  9 (      Water      ), IOU: 0.5485
+Class 17 (   Bridge Deck   ), IOU: 0.9822
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_315_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_315_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 19143 unlabeled truth points
+430532
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_315_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_315_CLS.txt):
+Confusion matrix with overall accuracy: 99.30%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     338977|        0|      629|        0|       11|       24|
+5         28|    17395|      730|        0|        0|       49|
+6       1012|      544|    61822|        0|        0|       18|
+9          0|        0|        0|        0|        0|        0|
+17        11|        0|        0|        0|    12338|        0|
+
+MIOU: 0.9751647369581576
+Class  2 (     Ground      ), IOU: 0.9950
+Class  5 ( High Vegetation ), IOU: 0.9279
+Class  6 (    Building     ), IOU: 0.9547
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9982
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_329_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_329_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 77106 unlabeled truth points
+1660474
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_329_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_329_CLS.txt):
+Confusion matrix with overall accuracy: 98.63%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1181072|       42|     4423|        0|      871|      264|
+5        374|   103498|     3354|        0|       62|      281|
+6       7192|     4607|   351750|        0|      658|      495|
+9        124|        0|        0|        0|        0|        0|
+17         0|        0|       71|        0|    24154|      182|
+
+MIOU: 0.7568813722918568
+Class  2 (     Ground      ), IOU: 0.9889
+Class  5 ( High Vegetation ), IOU: 0.9223
+Class  6 (    Building     ), IOU: 0.9442
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9291
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_331_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_331_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 87685 unlabeled truth points
+1964493
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_331_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_331_CLS.txt):
+Confusion matrix with overall accuracy: 97.90%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1322638|        4|     6467|        0|        0|      242|
+5        331|   297187|     7748|        0|        0|      362|
+6      14505|    12110|   344668|        0|        0|      186|
+9        129|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7625674698879935
+Class  2 (     Ground      ), IOU: 0.9839
+Class  5 ( High Vegetation ), IOU: 0.9353
+Class  6 (    Building     ), IOU: 0.8937
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_332_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_332_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 99465 unlabeled truth points
+1230059
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_332_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_332_CLS.txt):
+Confusion matrix with overall accuracy: 99.45%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2    1054248|       50|     1185|     1666|      256|      163|
+5        233|   102842|      494|        0|        2|       58|
+6       1757|      410|    61529|        0|        0|      109|
+9         42|        0|        0|     4723|        5|        0|
+17       166|        7|        0|        0|     6717|      204|
+
+MIOU: 0.9138398199245457
+Class  2 (     Ground      ), IOU: 0.9948
+Class  5 ( High Vegetation ), IOU: 0.9880
+Class  6 (    Building     ), IOU: 0.9396
+Class  9 (      Water      ), IOU: 0.7338
+Class 17 (   Bridge Deck   ), IOU: 0.9130
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_342_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_342_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 30032 unlabeled truth points
+683980
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_342_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_342_CLS.txt):
+Confusion matrix with overall accuracy: 99.71%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     556207|       10|      860|        0|        0|       30|
+5         18|     9388|      146|        0|        0|       43|
+6        797|       89|   118385|        0|        0|        3|
+9          6|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7899189100619257
+Class  2 (     Ground      ), IOU: 0.9969
+Class  5 ( High Vegetation ), IOU: 0.9684
+Class  6 (    Building     ), IOU: 0.9842
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_353_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_353_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 43565 unlabeled truth points
+849236
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_353_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_353_CLS.txt):
+Confusion matrix with overall accuracy: 98.98%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     667520|        3|      989|        0|      111|       30|
+5         40|    71037|     1979|        0|        0|       88|
+6       1633|     3836|    86881|        0|        0|       52|
+9          0|        0|        0|        0|        0|        0|
+17         1|        0|        0|        0|    23798|        0|
+
+MIOU: 0.9649758415573038
+Class  2 (     Ground      ), IOU: 0.9958
+Class  5 ( High Vegetation ), IOU: 0.9228
+Class  6 (    Building     ), IOU: 0.9110
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 0.9953
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_355_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_355_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 19145 unlabeled truth points
+507253
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_355_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_355_CLS.txt):
+Confusion matrix with overall accuracy: 98.27%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     391277|        2|      504|      275|        0|       11|
+5        185|    68830|     2352|        0|        0|      158|
+6       1091|     4238|    47143|        0|        0|       84|
+9          9|        0|        0|        3|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7528824193483226
+Class  2 (     Ground      ), IOU: 0.9947
+Class  5 ( High Vegetation ), IOU: 0.9085
+Class  6 (    Building     ), IOU: 0.8508
+Class  9 (      Water      ), IOU: 0.0105
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_357_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_357_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 89789 unlabeled truth points
+1306036
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_357_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_357_CLS.txt):
+Confusion matrix with overall accuracy: 98.11%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     698578|      532|     1334|        0|        0|      195|
+5       2673|   526171|     4825|        0|        0|      581|
+6       4749|    10041|    81287|        0|        0|      256|
+9         11|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7490925181370338
+Class  2 (     Ground      ), IOU: 0.9866
+Class  5 ( High Vegetation ), IOU: 0.9658
+Class  6 (    Building     ), IOU: 0.7931
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_364_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_364_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 40423 unlabeled truth points
+621909
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_364_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_364_CLS.txt):
+Confusion matrix with overall accuracy: 99.31%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     489429|       24|      547|        1|     1088|       81|
+5        540|    51016|      453|        0|        0|       99|
+6        989|      265|    71299|        0|       24|      118|
+9          0|        0|        0|        0|        0|        0|
+17        17|        0|        7|        0|    10165|       65|
+
+MIOU: 0.7657404101304788
+Class  2 (     Ground      ), IOU: 0.9933
+Class  5 ( High Vegetation ), IOU: 0.9736
+Class  6 (    Building     ), IOU: 0.9674
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 0.8943
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_367_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_367_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 51797 unlabeled truth points
+864421
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_367_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_367_CLS.txt):
+Confusion matrix with overall accuracy: 96.94%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     555168|        3|     2703|        0|        0|       69|
+5        106|   142031|     6775|        0|        0|      196|
+6       6932|    10359|   167222|        0|        0|      133|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9469387514785537
+Class  2 (     Ground      ), IOU: 0.9826
+Class  5 ( High Vegetation ), IOU: 0.8906
+Class  6 (    Building     ), IOU: 0.8614
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_374_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_374_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 66954 unlabeled truth points
+1215041
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_374_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_374_CLS.txt):
+Confusion matrix with overall accuracy: 98.98%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     759811|       56|     1135|        0|        0|       67|
+5       1343|   382472|     1924|        0|        0|      106|
+6       2871|     4929|    72758|        0|        0|       38|
+9          1|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7682403915575672
+Class  2 (     Ground      ), IOU: 0.9928
+Class  5 ( High Vegetation ), IOU: 0.9786
+Class  6 (    Building     ), IOU: 0.8697
+Class  9 (      Water      ), IOU: 0.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_376_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_376_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 14827 unlabeled truth points
+286496
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_376_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_376_CLS.txt):
+Confusion matrix with overall accuracy: 99.19%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     248883|       11|      151|     1425|        1|      154|
+5         18|     3010|       68|        3|        0|       36|
+6        285|       19|    27169|        0|        0|        2|
+9        129|        1|        0|     7434|        0|       40|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.7492366844340086
+Class  2 (     Ground      ), IOU: 0.9913
+Class  5 ( High Vegetation ), IOU: 0.9507
+Class  6 (    Building     ), IOU: 0.9810
+Class  9 (      Water      ), IOU: 0.8231
+Class 17 (   Bridge Deck   ), IOU: 0.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_381_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_381_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 12682 unlabeled truth points
+607613
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_381_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_381_CLS.txt):
+Confusion matrix with overall accuracy: 99.83%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     512639|        0|      182|        0|        0|        2|
+5        117|     2298|      258|        0|        0|        3|
+6        485|        0|    92676|        0|        0|        4|
+9          0|        0|        0|        0|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.9694577631302715
+Class  2 (     Ground      ), IOU: 0.9985
+Class  5 ( High Vegetation ), IOU: 0.8587
+Class  6 (    Building     ), IOU: 0.9901
+Class  9 (      Water      ), IOU: 1.0000
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_382_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_382_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 18681 unlabeled truth points
+915822
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_382_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_382_CLS.txt):
+Confusion matrix with overall accuracy: 99.68%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     877597|        3|       44|     1056|      328|       29|
+5         52|    23479|       58|        0|        0|       33|
+6         28|        0|     1750|        0|        0|        1|
+9       1285|        0|        0|     5744|        0|        8|
+17         6|        0|        0|        0|     7252|        0|
+
+MIOU: 0.9173363020430019
+Class  2 (     Ground      ), IOU: 0.9968
+Class  5 ( High Vegetation ), IOU: 0.9938
+Class  6 (    Building     ), IOU: 0.9304
+Class  9 (      Water      ), IOU: 0.7097
+Class 17 (   Bridge Deck   ), IOU: 0.9560
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_383_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_383_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 25478 unlabeled truth points
+853782
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_383_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_383_CLS.txt):
+Confusion matrix with overall accuracy: 99.77%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     755262|        1|      480|       11|        0|       60|
+5         26|     8277|      306|        0|        0|       19|
+6        833|        1|    90182|        0|        0|        3|
+9        267|        0|        0|       61|        0|        0|
+17         0|        0|        0|        0|        0|        0|
+
+MIOU: 0.8238283166116354
+Class  2 (     Ground      ), IOU: 0.9978
+Class  5 ( High Vegetation ), IOU: 0.9591
+Class  6 (    Building     ), IOU: 0.9823
+Class  9 (      Water      ), IOU: 0.1799
+Class 17 (   Bridge Deck   ), IOU: 1.0000
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_389_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_389_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 22094 unlabeled truth points
+742433
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_389_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_389_CLS.txt):
+Confusion matrix with overall accuracy: 99.18%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     609001|        0|      774|      454|       14|       51|
+5         74|    75690|     1048|        0|        6|       76|
+6       1622|     1395|    55056|        0|        0|       44|
+9        557|        0|        0|     1838|        0|        0|
+17        21|        0|        0|        0|      848|        0|
+
+MIOU: 0.8957065428010665
+Class  2 (     Ground      ), IOU: 0.9942
+Class  5 ( High Vegetation ), IOU: 0.9668
+Class  6 (    Building     ), IOU: 0.9185
+Class  9 (      Water      ), IOU: 0.6451
+Class 17 (   Bridge Deck   ), IOU: 0.9539
+
+Scoring pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_391_CLS.txt against pointnet2/data/dfc/inference_data/gt/OMA_391_CLS.txt:
+Invalid prediction LABEL: 0
+Skipped 25943 unlabeled truth points
+792574
+Scores for pointnet2/data/dfc/inference_data/out_sift_gpu_4/OMA_391_CLS.txt (truth: pointnet2/data/dfc/inference_data/gt/OMA_391_CLS.txt):
+Confusion matrix with overall accuracy: 99.09%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2     627350|        7|      791|     1031|      293|       14|
+5        120|    84436|      451|        0|      159|       56|
+6       2103|     1814|    72665|        0|        0|       48|
+9        341|        0|        0|     1548|        0|        1|
+17        78|        0|        0|        0|     6575|        0|
+
+MIOU: 0.8701969380524357
+Class  2 (     Ground      ), IOU: 0.9924
+Class  5 ( High Vegetation ), IOU: 0.9700
+Class  6 (    Building     ), IOU: 0.9331
+Class  9 (      Water      ), IOU: 0.5300
+Class 17 (   Bridge Deck   ), IOU: 0.9254
+
+----- OVERALL SCORES -----
+Confusion matrix with overall accuracy: 98.48%
+Truth  Pred(2)   Pred(5)   Pred(6)   Pred(9)  Pred(17) Pred(OTHER) 
+-------------------------------------------------------------------
+2   53999191|     3133|    93674|    96671|    15253|    10786|
+5      23074| 11824902|   234633|       81|     1280|    12810|
+6     222207|   418680| 10400780|       35|     1725|     8799|
+9      55183|      130|       19|  1319610|      186|     1037|
+17      5667|     1369|     1353|       82|   948258|     2850|
+
+MIOU: 0.9428088327212336
+Class  2 (     Ground      ), IOU: 0.9904
+Class  5 ( High Vegetation ), IOU: 0.9445
+Class  6 (    Building     ), IOU: 0.9138
+Class  9 (      Water      ), IOU: 0.8958
+Class 17 (   Bridge Deck   ), IOU: 0.9696
+
