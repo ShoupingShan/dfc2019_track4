@@ -28,7 +28,7 @@ sys.path.append(os.path.join(ROOT_DIR, 'utils'))
 import provider
 import tf_util
 import pc_util
-
+from softmax import softmax
 class InputType(Enum):
     TXT='TXT'
     LAS='LAS'
@@ -37,7 +37,7 @@ class OutputType(Enum):
     LABELS='LABELS'
     LAS='LAS'
     BOTH='BOTH'
-    
+
     def __str__(self):
         return self.value
 
@@ -58,7 +58,7 @@ def parse_args(argv):
     parser.add_argument('--input_type', type=InputType, choices=list(InputType), default=InputType.TXT)
     parser.add_argument('--output_path', required=True, help='Output path')
     parser.add_argument('--output_type', type=OutputType, choices=list(OutputType), default=OutputType.LABELS)
-    
+
     return parser.parse_args(argv[1:])
 
 def start_log(opts):
@@ -116,11 +116,11 @@ def inference():
         files = glob.glob(os.path.join(FLAGS.input_path,"*.txt"))
     elif FLAGS.input_type is InputType.LAS:
         files = glob.glob(os.path.join(FLAGS.input_path,"*.las"))
-    
+
     # Setup queues
     input_queue = Queue(maxsize=3)
     output_queue = Queue(maxsize=3)
-    
+
     # Note: this threading implementation could be setup more efficiently, but it's about 2x faster than a non-threaded version.
     logging.info('Starting threads')
     pre_proc = threading.Thread(target=pre_processor,name='Pre-ProcThread',args=(sorted(files),input_queue))
@@ -129,7 +129,7 @@ def inference():
     main_proc.start()
     post_proc = threading.Thread(target=post_processor,name='PostProcThread',args=(output_queue,))
     post_proc.start()
-    
+
     logging.debug('Waiting for threads to finish')
     pre_proc.join()
     logging.debug('Joined pre-processing thread')
@@ -137,7 +137,7 @@ def inference():
     logging.debug('Joined main processing thread')
     post_proc.join()
     logging.debug('Joined post-processing thread')
-    
+
     logging.info('Done')
 
 
@@ -145,16 +145,16 @@ def prep_pset(pset):
     data64 = np.stack([pset.x,pset.y,pset.z,pset.i,pset.r],axis=1)
     offsets = np.mean(data64[:,COLUMNS],axis=0)
     data = (data64[:,COLUMNS]-offsets).astype('float32')
-    
+
     n = len(pset.x)
-    
+
     if NUM_POINT < n:
         ixs = np.random.choice(n,NUM_POINT,replace=False)
     elif NUM_POINT == n:
         ixs = np.arange(NUM_POINT)
     else:
         ixs = np.random.choice(n,NUM_POINT,replace=True)
-    
+
     return data64[ixs,:], data[ixs,:] / SCALE[COLUMNS]
 
 
@@ -171,20 +171,20 @@ def get_batch(dataset, start_idx, end_idx):
 
 def pre_processor(files, input_queue):
     for file in files:
-        
+
         logging.info('Loading {}'.format(file))
         pset = PointSet(file)
         psets = pset.split()
         num_batches = int(math.ceil((1.0*len(psets))/BATCH_SIZE))
-        
+
         data = []
         for batch_idx in range(num_batches):
             start_idx = batch_idx * BATCH_SIZE
             end_idx = (batch_idx+1) * BATCH_SIZE
-            
+
             for k in range(FLAGS.n_angles):
                 batch_raw, batch_data = get_batch(psets, start_idx, end_idx)
-    
+
                 if k == 0:
                     aug_data = batch_data
                 else:
@@ -194,9 +194,9 @@ def pre_processor(files, input_queue):
                                 batch_data[:,:,3:]),axis=2)
                     else:
                         aug_data = provider.rotate_point_cloud_z(batch_data)
-                
+
                 data.append((batch_raw,aug_data))
-        
+
         logging.debug('Adding {} to queue'.format(file))
         input_queue.put((pset,data))
         logging.debug('Added {} to queue'.format(file))
@@ -210,11 +210,11 @@ def main_processor(input_queue, output_queue):
         with tf.device('/device:GPU:'+str(GPU_INDEX)):
             pointclouds_pl, labels_pl, smpws_pl = MODEL.placeholder_inputs(BATCH_SIZE, NUM_POINT)
             is_training_pl = tf.placeholder(tf.bool, shape=())
-            
+
             logging.info("Loading model")
             pred, end_points = MODEL.get_model(pointclouds_pl, is_training_pl, NUM_CLASSES)
             saver = tf.train.Saver()
-        
+
         # Create a session
         config = tf.ConfigProto()
         config.gpu_options.allow_growth = True
@@ -227,34 +227,38 @@ def main_processor(input_queue, output_queue):
                'pred': pred}
         is_training = False
         logging.info("Model loaded")
-    
+
         while True:
             in_data = input_queue.get()
             if in_data is None:
                 break
-            
+
             logging.info('Processing {}'.format(in_data[0].filename))
             batch_list = in_data[1]
             for k in range(len(batch_list)):
                 batch_raw = batch_list[k][0]
                 aug_data = batch_list[k][1]
-                
+
                 feed_dict = {ops['pointclouds_pl']: aug_data,
                             ops['is_training_pl']: is_training}
                 pred_val = sess.run([ops['pred']], feed_dict=feed_dict)
-        
+                pred_softmax = softmax(pred_val[0])
                 pred_labels = np.argmax(pred_val[0], 2) # BxN
-                
+                pred_labels_softmax = np.where(pred_softmax >= 0.8, 1, -1)
+                pred_labels_softmax = np.argmax(pred_labels_softmax, 2)
+                pred_labels = pred_labels_softmax # 把验证集置信度较低的样本类别设为0（undefined）
                 # subset to true batch size as necessary
                 if batch_raw.shape[0] != BATCH_SIZE:
                     pred_labels = pred_labels[0:batch_raw.shape[0],:]
-                
+
+
                 # Reshape pred_labels and batch_raw to (BxN,1) and (BxN,5) respectively (i.e. concatenate all point sets in batch together)
                 pred_labels.shape = (pred_labels.shape[0]*pred_labels.shape[1])
                 batch_raw.shape = (batch_raw.shape[0]*batch_raw.shape[1],batch_raw.shape[2])
-                
+
                 if k==0:
                     all_labels = pred_labels
+                    all_softmax = pred_labels_softmax
                     all_points = batch_raw
                 else:
                     # Concatenate all pointsets across all batches together
@@ -274,11 +278,13 @@ def post_processor(output_queue):
         out_data = output_queue.get()
         if out_data is None:
             break
-        
+
         pset = out_data[0]
         all_points = out_data[1]
         all_labels = out_data[2]
-        
+        all_softmax = out_data[3]
+        # Work Here 20090217->02:02
+
         logging.info('Post-processing {}'.format(pset.filename))
         with tempfile.TemporaryDirectory() as tmpdir:
             # Save pset to temp file
