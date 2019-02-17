@@ -282,7 +282,6 @@ def post_processor(output_queue):
         pset = out_data[0]
         all_points = out_data[1]
         all_labels = out_data[2]
-        all_softmax = out_data[3]
         # Work Here 20090217->02:02
 
         logging.info('Post-processing {}'.format(pset.filename))
@@ -313,7 +312,7 @@ def post_processor(output_queue):
                     ipath,
                     {'type':'filters.neighborclassifier','k':FLAGS.n_angles*4+1,'candidate':cpath}, # Note: number of votes is FLAGS.n_angles*4+1, where 4 comes from splitting the point cloud (nominal number of overlapping subtiles per point before rotations)
                     opath]}
-            p = subprocess.run(['/opt/conda/envs/cpdal-run/bin/pdal','pipeline','-s'],input=json.dumps(pipeline).encode())
+            p = subprocess.run(['/home/shp/anaconda3/envs/cpdal-run/bin/pdal','pipeline','-s'],input=json.dumps(pipeline).encode())
             if p.returncode:
                 raise ValueError('Failed to run pipeline: \n"'+json.dumps(pipeline)+'"')
             
