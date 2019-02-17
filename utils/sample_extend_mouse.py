@@ -314,27 +314,27 @@ if __name__=='__main__':
     color_map = [[255, 255, 255],  [133, 205, 63], [255, 0, 0], [206, 135, 250], [112, 147, 219], [125, 139, 107]]
     # undefine, ground, high vegetation, building, water, Bridge Deck
 
-    root_dir = '/home/jinyue/Track4/'
-    save_dir = '/home/jinyue/Track4_extend/'
-    predict = True
-    pred_root = '/home/jinyue/Track4_pred/out_sift_gpu_1/'
+    root_dir = '/home/shp/Documents/Code/Python/Contest/dfc2019/track4/pointnet2/data/dfc/inference_data/Extend_path/in/'
+    save_dir = '/home/shp/Documents/Code/Python/Contest/dfc2019/track4/pointnet2/data/dfc/inference_data/Extend_path/Mouse_extend/'
 
     files_path = glob.glob(os.path.join(root_dir, "*_PC3.txt"))
     num = np.shape(files_path)[0]
+    predict = False
+    work_checkpoint = 60
     for ind in range(num):
+        ind = ind + work_checkpoint
         print('No.', ind)
-
         pc3_path = files_path[ind]
-        cls_path = pc3_path[:-7] + 'CLS.txt'
+        cls_path = pc3_path[:-19] + '/gt/'+pc3_path[-15:-7]+ 'CLS.txt'
         _, tempfilename = os.path.split(pc3_path)
         title = tempfilename[:-8]
         print('Title:', title)
         # cv2.namedWindow(title)
 
         if predict:
-            pred_path = pred_root + tempfilename[:-7] + 'CLS.txt'
+            pred_path = pc3_path[:-7] + 'Pred.txt'
         else:
-            pred_path = cls_path
+            pred_path = pc3_path[:-19] + '/out_sift_gpu_1/'+pc3_path[-15:-7]+ 'CLS.txt'
 
         gt = []
         pred = []
@@ -417,7 +417,7 @@ if __name__=='__main__':
         for line_gt, line_pred in zip(data2,data3):
             line_gt = int(line_gt)
             line_pred = int(line_pred)
-            if line_gt - line_pred is not 0 and line_gt is not 0:
+            if line_gt - line_pred is not 0:
                 format_float.append([0, 255, 0]) #Red color
             else:
                 format_float.append([0,0,0])
@@ -428,5 +428,3 @@ if __name__=='__main__':
         # print(label)
         showpoints(point, title, root_dir, save_dir=save_dir, c_gt=gt, label=label, c_pred=pred, c_res=Residual,
                    ballradius=2, normalizecolor=False, showrot=False)
-
-
