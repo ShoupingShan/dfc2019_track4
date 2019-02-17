@@ -97,10 +97,6 @@ def get_rect(im, title='show3d'):
                 return TL, BR
 
 
-
-# cv2.moveWindow('show3d',0,0)
-# cv2.setMouseCallback('show3d',onmouse)
-
 dll = np.ctypeslib.load_library(os.path.join(BASE_DIR, 'render_balls_so'),'.')
 
 
@@ -108,11 +104,14 @@ def showpoints(xyz_all, title, root_dir, save_dir=None, c_gt=None, c_pred=None, 
                waittime=0, showrot=False, magnifyBlue=0, freezerot=False,
                background=(0,0,0), normalizecolor=True, ballradius=10):
     global showsz,mousex,mousey,zoom,changed
-    xyz = xyz_all[:,0:3]
+    xyz = np.array(xyz_all[:,0:3])
     label_all = label
-    xyz=xyz-xyz.mean(axis=0)
-    radius=((xyz**2).sum(axis=-1)**0.5).max()
-    xyz/=(radius*2.2)/showsz
+
+    M = np.max(xyz, axis=0)
+    m = np.min(xyz, axis=0)
+    r = (M-m) /showsz
+
+
     if c_gt is None:
         c0=np.zeros((len(xyz),),dtype='float32')+255
         c1=np.zeros((len(xyz),),dtype='float32')+255
@@ -135,53 +134,16 @@ def showpoints(xyz_all, title, root_dir, save_dir=None, c_gt=None, c_pred=None, 
     rect_flag = True
 
     def render(title, root_dir, save_dir, rect_flag=rect_flag):
-        rotmat=np.eye(3)
-        if not freezerot:
-            xangle=(mousey-0.5)*np.pi*1.2
-        else:
-            xangle=0
-        rotmat=rotmat.dot(np.array([
-            [1.0,0.0,0.0],
-            [0.0,np.cos(xangle),-np.sin(xangle)],
-            [0.0,np.sin(xangle),np.cos(xangle)],
-            ]))
-        if not freezerot:
-            yangle=(mousex-0.5)*np.pi*1.2
-        else:
-            yangle=0
-        rotmat=rotmat.dot(np.array([
-            [np.cos(yangle),0.0,-np.sin(yangle)],
-            [0.0,1.0,0.0],
-            [np.sin(yangle),0.0,np.cos(yangle)],
-            ]))
-        rotmat*=zoom
-        nxyz=xyz.dot(rotmat)+[showsz/2,showsz/2,0]
-
-        ixyz=nxyz.astype('int32')
         show[:]=background
-        dll.render_ball(
-            ct.c_int(show.shape[0]),
-            ct.c_int(show.shape[1]),
-            show.ctypes.data_as(ct.c_void_p),
-            ct.c_int(ixyz.shape[0]),
-            ixyz.ctypes.data_as(ct.c_void_p),
-            c0.ctypes.data_as(ct.c_void_p),
-            c1.ctypes.data_as(ct.c_void_p),
-            c2.ctypes.data_as(ct.c_void_p),
-            ct.c_int(ballradius)
-        )
 
-        if magnifyBlue>0:
-            show[:,:,0]=np.maximum(show[:,:,0],np.roll(show[:,:,0],1,axis=0))
-            if magnifyBlue>=2:
-                show[:,:,0]=np.maximum(show[:,:,0],np.roll(show[:,:,0],-1,axis=0))
-            show[:,:,0]=np.maximum(show[:,:,0],np.roll(show[:,:,0],1,axis=1))
-            if magnifyBlue>=2:
-                show[:,:,0]=np.maximum(show[:,:,0],np.roll(show[:,:,0],-1,axis=1))
-        if showrot:
-            cv2.putText(show,'xangle %d'%(int(xangle/np.pi*180)),(80,showsz-30),0,1,(255,0,0))
-            cv2.putText(show,'yangle %d'%(int(yangle/np.pi*180)),(80,showsz-70),0,1,(255,0,0))
-            cv2.putText(show,'zoom %d%%'%(int(zoom*100)),(80,showsz-100),0,1,(255,0,0))
+        l = len(xyz)
+        for ind in range(l):
+            x_ind = int((xyz[ind, 0] - m[0]) // r[0])
+            y_ind = int((xyz[ind, 1] - m[1]) // r[1])
+            show[x_ind, y_ind, 0] = c0[ind]
+            show[x_ind, y_ind, 1] = c1[ind]
+            show[x_ind, y_ind, 2] = c2[ind]
+
         if Show_mode==0:
             labels = 'Ground Truth'
         elif Show_mode == 1:
@@ -193,15 +155,18 @@ def showpoints(xyz_all, title, root_dir, save_dir=None, c_gt=None, c_pred=None, 
 
         if(rect_flag):
             a, b = get_rect(show, title=title)  # 鼠标画矩形框
+<<<<<<< HEAD
             a = np.array(a)
             b = np.array(b)
             # print(a)
+=======
+            print(a)
+            print(b)
+>>>>>>> 91e19b705e3727d73668143e7b0ca4a543c19ec7
             num_point = 0
             collection_data = []
             collection_label = []
 
-            # file_name = 'extend_sample_DATA_1.txt'
-            # label_name= 'extend_sample_GT_1.txt'
             if save_dir is None:
                 save_dir = root_dir
             file_path = save_dir + title + '_PC3_extend.txt'
@@ -209,6 +174,7 @@ def showpoints(xyz_all, title, root_dir, save_dir=None, c_gt=None, c_pred=None, 
 
             f = open(file_path, 'w')
             g = open(label_path, 'w')
+<<<<<<< HEAD
             tl_base=[]
             tl_base.append(a[0][0]) #tl.x
             tl_base.append(a[0][1]) #tl.y
@@ -233,6 +199,22 @@ def showpoints(xyz_all, title, root_dir, save_dir=None, c_gt=None, c_pred=None, 
                 print(tl_x_real,' ',br_x_real ,' ',tl_y_real ,' ',br_y_real )
                 for items,l in zip(xyz_all, label_all):
                     if items[1] >= tl_x_real * X and items[1] <= br_x_real * X  and items[0] >= tl_y_real * Y  and items[0] <= br_y_real * Y:
+=======
+
+            for index_x, index_y in zip(a,b):
+                x_range1 = index_x[1] * r[0] + m[0]
+                x_range2 = index_y[1] * r[0] + m[0]
+                y_range1 = index_x[0] * r[1] + m[1]
+                y_range2 = index_y[0] * r[1] + m[1]
+
+                print('x_range1', x_range1)
+                print('x_range2', x_range2)
+                print('y_range1', y_range1)
+                print('y_range2', y_range2)
+
+                for items,l in zip(xyz_all, label_all):
+                    if items[0] >= x_range1 and items[0] <= x_range2 and items[1] >= y_range1 and items[1] <= y_range2:
+>>>>>>> 91e19b705e3727d73668143e7b0ca4a543c19ec7
                         num_point += 1
                         collection_data.append(items[:])
                         collection_label.append(l)
@@ -253,7 +235,6 @@ def showpoints(xyz_all, title, root_dir, save_dir=None, c_gt=None, c_pred=None, 
             g.close()
             print("%d points are selected." % num_point)
             print("Saved in %s." % file_path)
-
 
     changed = True
     rect_flag = False
@@ -318,19 +299,6 @@ def showpoints(xyz_all, title, root_dir, save_dir=None, c_gt=None, c_pred=None, 
             c2=np.require(c2,'float32','C')
             changed = True
 
-        if cmd==ord('n'):
-            zoom*=1.1
-            changed=True
-        elif cmd==ord('m'):
-            zoom/=1.1
-            changed=True
-        elif cmd==ord('r'):
-            zoom=2.0
-            changed=True
-        elif cmd==ord('s'):
-            cv2.imwrite('show3d.png', show)
-        if waittime!=0:
-            break
     return cmd
 
 
@@ -339,30 +307,30 @@ if __name__=='__main__':
     numbers_float = []
     format_float = []
     #r g b->g r b
-    color_map = [[255, 255, 255],  [133, 205, 63], [255, 0, 0], [206, 135, 250], [112, 147, 219], [125, 139, 107]]
+    color_map = [[255, 255, 255],  [20, 97, 199], [34, 139, 34], [235, 206, 135], [211, 102, 160], [135, 138, 128]]
     # undefine, ground, high vegetation, building, water, Bridge Deck
 
-    root_dir = '/home/shp/Documents/Code/Python/Contest/dfc2019/track4/pointnet2/data/dfc/inference_data/Extend_path/in/'
-    save_dir = '/home/shp/Documents/Code/Python/Contest/dfc2019/track4/pointnet2/data/dfc/inference_data/Extend_path/Mouse_extend/'
+    root_dir = '/home/jinyue/Track4/'
+    save_dir = '/home/jinyue/Track4_extend/'
+    predict = True
+    pred_root = '/home/jinyue/Track4_pred/out_sift_gpu_1/'
 
     files_path = glob.glob(os.path.join(root_dir, "*_PC3.txt"))
     num = np.shape(files_path)[0]
-    predict = False
-    work_checkpoint = 60
-    for ind in range(num):
-        ind = ind + work_checkpoint
+    for ind in range(20):
         print('No.', ind)
+
         pc3_path = files_path[ind]
-        cls_path = pc3_path[:-19] + '/gt/'+pc3_path[-15:-7]+ 'CLS.txt'
+        cls_path = pc3_path[:-7] + 'CLS.txt'
         _, tempfilename = os.path.split(pc3_path)
         title = tempfilename[:-8]
         print('Title:', title)
         # cv2.namedWindow(title)
 
         if predict:
-            pred_path = pc3_path[:-7] + 'Pred.txt'
+            pred_path = pred_root + tempfilename[:-7] + 'CLS.txt'
         else:
-            pred_path = pc3_path[:-19] + '/out_sift_gpu_1/'+pc3_path[-15:-7]+ 'CLS.txt'
+            pred_path = cls_path
 
         gt = []
         pred = []
@@ -456,8 +424,8 @@ if __name__=='__main__':
         for line_gt, line_pred in zip(data2,data3):
             line_gt = int(line_gt)
             line_pred = int(line_pred)
-            if line_gt - line_pred is not 0:
-                format_float.append([0, 255, 0]) #Red color
+            if line_gt - line_pred is not 0 and line_gt is not 0:
+                format_float.append([0, 0, 255]) #Red color
             else:
                 format_float.append([0,0,0])
             numbers_float.append(format_float)
@@ -467,3 +435,5 @@ if __name__=='__main__':
         # print(label)
         showpoints(point, title, root_dir, save_dir=save_dir, c_gt=gt, label=label, c_pred=pred, c_res=Residual,
                    ballradius=2, normalizecolor=False, showrot=False)
+
+
