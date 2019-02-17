@@ -188,7 +188,7 @@ if __name__=='__main__':
     gt = []
     pred = []
     Residual = []
-    f = open('/home/jinyue/Track4_extend/JAX_273_PC3_extend.txt', 'r')
+    f = open('/home/jinyue/Track4_augment/0_PC3_extend.txt', 'r')
     data = f.readlines()  #txt中所有字符串读入data
     for line in data:
         line = line[:]
@@ -200,7 +200,7 @@ if __name__=='__main__':
         format_float = []
     point = np.array(numbers_float)
     numbers_float = []
-    g = open('/home/jinyue/Track4_extend/JAX_273_CLS_extend.txt', 'r')
+    g = open('/home/jinyue/Track4_augment/0_CLS_extend.txt', 'r')
     data2 = g.readlines()
     print("GT:",np.unique(np.array(data2)))
     for line in data2:
