@@ -316,10 +316,11 @@ if __name__=='__main__':
 
     root_dir = '/home/jinyue/Track4/'
     save_dir = '/home/jinyue/Track4_extend/'
+    predict = True
+    pred_root = '/home/jinyue/Track4_pred/out_sift_gpu_1/'
 
     files_path = glob.glob(os.path.join(root_dir, "*_PC3.txt"))
     num = np.shape(files_path)[0]
-    predict = False
     for ind in range(num):
         print('No.', ind)
 
@@ -331,7 +332,7 @@ if __name__=='__main__':
         # cv2.namedWindow(title)
 
         if predict:
-            pred_path = pc3_path[:-7] + 'Pred.txt'
+            pred_path = pred_root + tempfilename[:-7] + 'CLS.txt'
         else:
             pred_path = cls_path
 
@@ -416,7 +417,7 @@ if __name__=='__main__':
         for line_gt, line_pred in zip(data2,data3):
             line_gt = int(line_gt)
             line_pred = int(line_pred)
-            if line_gt - line_pred is not 0:
+            if line_gt - line_pred is not 0 and line_gt is not 0:
                 format_float.append([0, 255, 0]) #Red color
             else:
                 format_float.append([0,0,0])

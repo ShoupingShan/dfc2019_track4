@@ -1,6 +1,7 @@
 1. 配置：
     主函数317 318：root_dir 点云文件和类别文件目录
                  save_dir 扩充样本保存目录
+                 pred_root 预测文件，如果有 predict=True, 否则predict=False, pred_root可以为空
 
 
 2. 标注流程
