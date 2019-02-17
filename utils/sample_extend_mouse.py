@@ -8,12 +8,16 @@ import glob
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 Show_mode = 0
-showsz=600
+showsz=800
 mousex,mousey=0.5,0.5
-zoom=2.0
+zoom=1.5
 changed=True
-
-
+x_rate = 1
+y_rate = 2
+x_min = 0
+y_min = 0
+X=0
+Y=0
 #鼠标事件
 def get_rect(im, title='show3d'):
     global changed
@@ -189,8 +193,8 @@ def showpoints(xyz_all, title, root_dir, save_dir=None, c_gt=None, c_pred=None, 
 
         if(rect_flag):
             a, b = get_rect(show, title=title)  # 鼠标画矩形框
-            a = np.array(a)- showsz/2
-            b = np.array(b) - showsz/2
+            a = np.array(a)
+            b = np.array(b)
             # print(a)
             num_point = 0
             collection_data = []
@@ -205,19 +209,43 @@ def showpoints(xyz_all, title, root_dir, save_dir=None, c_gt=None, c_pred=None, 
 
             f = open(file_path, 'w')
             g = open(label_path, 'w')
+            tl_base=[]
+            tl_base.append(a[0][0]) #tl.x
+            tl_base.append(a[0][1]) #tl.y
+            br_base = []
+            br_base.append(b[0][0])  # br.x
+            br_base.append(b[0][1])  # br.y
+            delta_x = tl_base[0]  #初始位置偏移量
+            delta_y = tl_base[1]
+            Width = br_base[0] - tl_base[0]
+            Height = br_base[1] - tl_base[1]
 
-            for index_x, index_y in zip(a,b):
+
+            print(delta_x)
+            print(delta_y)
+
+
+            for index_x, index_y in zip(a[1:],b[1:]): #index_x:(x_0,y_0), index_y:(x_1,y_1)
+                tl_x_real = (index_x[0] - delta_x) / Width
+                br_x_real = (index_y[0] - delta_x) / Width
+                tl_y_real = (index_x[1] - delta_y) / Height
+                br_y_real = (index_y[1] - delta_y) / Height
+                print(tl_x_real,' ',br_x_real ,' ',tl_y_real ,' ',br_y_real )
                 for items,l in zip(xyz_all, label_all):
-                    if items[0] >= index_x[0] and items[0] <= index_y[0] and items[1] >= index_x[1] and items[1] <= index_y[1]:
+                    if items[1] >= tl_x_real * X and items[1] <= br_x_real * X  and items[0] >= tl_y_real * Y  and items[0] <= br_y_real * Y:
                         num_point += 1
                         collection_data.append(items[:])
                         collection_label.append(l)
             for data, label in zip(collection_data, collection_label):
-                f.write(str(data[0]))
+                f.write(str(data[0]+x_min))
                 f.write(',')
-                f.write(str(data[1]))
+                f.write(str(data[1]+y_min))
                 f.write(',')
                 f.write(str(data[2]))
+                f.write(',')
+                f.write(str(data[3]))
+                f.write(',')
+                f.write(str(data[4]))
                 f.write('\n')
                 g.write(str(label))
                 g.write('\n')
@@ -355,6 +383,17 @@ if __name__=='__main__':
         point = np.array(numbers_float)
         numbers_float = []
         f.close()
+        x_max = np.max(point[:, 0])
+        y_max = np.max(point[:, 1])
+        x_min = np.min(point[:, 0])
+        y_min = np.min(point[:, 1])
+        X = x_max - x_min
+        Y = y_max - y_min
+        x_rate = X / showsz
+        y_rate = Y / showsz
+        point[:,0] = point[:,0] - x_min#convert to (0,0) instead of (x_min,y_min)
+        point[:,1] = point[:,1] - y_min
+
 
         g = open(cls_path, 'r')
         data2 = g.readlines()
