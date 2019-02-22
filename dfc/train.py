@@ -63,6 +63,12 @@ os.system('cp '+__file__+' %s' % (LOG_DIR)) # bkp of train procedure
 os.system('cp %s %s' % (os.path.join(FLAGS.data_dir,'dfc_train_metadata.pickle'),LOG_DIR)) # copy of training metadata
 LOG_FOUT = open(os.path.join(LOG_DIR, 'train.log'), 'w')
 LOG_FOUT.write(str(FLAGS)+'\n')
+NUM_KERNEL = 32
+KERNEL_LOG_FOUT = []
+for i in range(NUM_KERNEL):
+    KERNEL_LOG_FOUT_i = open(os.path.join(LOG_DIR+'/logs','kernel'+str(i+1)+'.log'),'w')
+    # KERNEL_LOG_FOUT_i.write(str(FLAGS) + '\n')
+    KERNEL_LOG_FOUT.append(KERNEL_LOG_FOUT_i)
 
 BN_INIT_DECAY = 0.5
 BN_DECAY_DECAY_RATE = 0.5
@@ -75,11 +81,19 @@ NUM_CLASSES = 6
 TRAIN_DATASET = dfc_dataset.DFCDataset(root=FLAGS.data_dir, npoints=NUM_POINT, split='train', log_weighting=FLAGS.log_weighting,extra_features=FLAGS.extra_dims)
 TEST_DATASET = dfc_dataset.DFCDataset(root=FLAGS.data_dir, npoints=NUM_POINT, split='val',extra_features=FLAGS.extra_dims)
 
+bad_sample_data = [] #存储每次训练loss较大的样本
+bad_sample_label = []
+bad_sample_smpw = []
+
 
 def log_string(out_str):
     LOG_FOUT.write(out_str+'\n')
     LOG_FOUT.flush()
     print(out_str)
+def log_kernel_string(out_str, FOUT_name):
+    FOUT_name.write(out_str+'\n')
+    FOUT_name.flush()
+    # print(out_str)
 
 def get_learning_rate(batch):
     learning_rate = tf.train.exponential_decay(
@@ -116,7 +130,7 @@ def train():
             print("--- Get model and loss")
             # Get model and loss 
             pred, end_points = MODEL.get_model(pointclouds_pl, is_training_pl, NUM_CLASSES, bn_decay=bn_decay)#导入模型
-            loss, all_loss = MODEL.get_loss(pred, labels_pl, smpws_pl)
+            loss= MODEL.get_loss(pred, labels_pl, smpws_pl)
             tf.summary.scalar('loss', loss)
             pred_class = tf.argmax(pred, 2)
             true_class = tf.to_int64(labels_pl)
@@ -177,34 +191,48 @@ def train():
                'is_training_pl': is_training_pl,
                'pred': pred,
                'loss': loss,
-               'all_loss':all_loss,
                'train_op': train_op,
                'merged': merged,
                'step': batch,
                'end_points': end_points}
-
-        best_acc = -1
+        if FLAGS.existing_model:
+            acc, miou = eval_one_epoch(sess, ops, test_writer)
+            best_acc = acc
+            best_miou = miou
+        else:
+            best_miou = -1
+            best_acc = -1
         for epoch in range(FLAGS.starting_epoch,MAX_EPOCH):
             log_string('**** EPOCH %03d ****' % (epoch))
             sys.stdout.flush()
-
+            Kernel = tf.get_collection('kernel')
+            for i in range(NUM_KERNEL):  #print kernel values
+                # log_kernel_string(str(datetime.now()), KERNEL_LOG_FOUT[i])
+                # log_kernel_string('**** EPOCH %03d ****' % (epoch), KERNEL_LOG_FOUT[i])
+                log_kernel_string(np.array2string(np.array(sess.run(Kernel)[0][i])), KERNEL_LOG_FOUT[i])
+            # print()
             train_one_epoch(sess, ops, train_writer)
-            do_save = epoch % 10 == 0
+            # do_save = epoch % 10 == 0
             
-            if epoch%5==0:
+            if epoch % 5==0:
                 log_string(str(datetime.now()))
                 log_string('---- EPOCH %03d EVALUATION ----'%(epoch))
-                acc = eval_one_epoch(sess, ops, test_writer)
+                acc, miou = eval_one_epoch(sess, ops, test_writer)
                 if acc > best_acc:
                     best_acc = acc
-                    save_path = bestsaver.save(sess, os.path.join(LOG_DIR, "best_model.ckpt"), global_step=(epoch*len(TRAIN_DATASET)))
-                    log_string("Model saved in file: %s" % save_path)
-                    do_save = False
+                    save_path = bestsaver.save(sess, os.path.join(LOG_DIR, "best_acc_model.ckpt"))
+                    log_string("Best Acc Model saved in file: %s" % save_path)
+                    # do_save = False
+                if miou > best_miou:
+                    best_acc = acc
+                    save_path = bestsaver.save(sess, os.path.join(LOG_DIR, "best_miou_model.ckpt"))
+                    log_string("Best MIOU Model saved in file: %s" % save_path)
+                    # do_save = False
 
-            # Save the variables to disk.
-            if do_save:
-                save_path = saver.save(sess, os.path.join(LOG_DIR, "model.ckpt"), global_step=(epoch*len(TRAIN_DATASET)))
-                log_string("Model saved in file: %s" % save_path)
+            # # Save the variables to disk.
+            # if do_save:
+            #     save_path = saver.save(sess, os.path.join(LOG_DIR, "model.ckpt"), global_step=(epoch*len(TRAIN_DATASET)))
+            #     log_string("Model saved in file: %s" % save_path)
 
 def get_batch_wdp(dataset, idxs, start_idx, end_idx):
     bsize = end_idx-start_idx
@@ -225,6 +253,22 @@ def get_batch_wdp(dataset, idxs, start_idx, end_idx):
             batch_smpw[i,drop_idx] *= 0
     return batch_data, batch_label, batch_smpw
 
+def get_batch_index(index_row, batch_size = BATCH_SIZE, num_points = NUM_POINT):
+    '''
+    :param index_row: 行向量坐标
+    :param batch_size:  batch size
+    :param num_points: the number of samples
+    :return: 对应的二维坐标
+    '''
+    cols = []
+    rows = []
+    for i in range(index_row.shape[0]):
+    #for l in index_row.eval():
+        l = index_row[i]
+        cols.append(l % num_points)
+        rows.append(l//num_points)
+    return rows, cols
+
 def get_batch(dataset, idxs, start_idx, end_idx):
     bsize = end_idx-start_idx
     batch_data = np.zeros((bsize, NUM_POINT, len(TRAIN_DATASET.columns)))
@@ -238,10 +282,70 @@ def get_batch(dataset, idxs, start_idx, end_idx):
             batch_smpw[i,:] = smpw
     return batch_data, batch_label, batch_smpw
 
+def get_batch_OHEM(datas,labels,smpws, idxs, start_idx, end_idx):
+    bsize = end_idx-start_idx
+    batch_data = np.zeros((bsize, NUM_POINT, np.shape(datas)[1]))
+    batch_label = np.zeros((bsize, NUM_POINT), dtype=np.int32)
+    batch_smpw = np.zeros((bsize, NUM_POINT), dtype=np.float32)
+    for i in range(bsize):
+        if start_idx+i < len(datas):
+            ps = datas[idxs[i+start_idx]]
+            seg = labels[idxs[i+start_idx]]
+            smpw = smpws[idxs[i + start_idx]]
+            batch_data[i,...] = ps
+            batch_label[i,:] = seg
+            batch_smpw[i,:] = smpw
+    return batch_data, batch_label, batch_smpw
+
+
 def train_one_epoch(sess, ops, train_writer):
     """ ops: dict mapping from string to tf ops """
     is_training = True
-    
+
+    # Shuffle train samples
+    train_idxs = np.arange(0, len(TRAIN_DATASET))
+    np.random.shuffle(train_idxs)
+    num_batches = int(math.ceil((1.0 * len(TRAIN_DATASET)) / BATCH_SIZE))
+
+    log_string(str(datetime.now()))
+
+    total_correct = 0
+    total_seen = 0
+    loss_sum = 0
+    for batch_idx in range(num_batches):
+        start_idx = batch_idx * BATCH_SIZE
+        end_idx = (batch_idx + 1) * BATCH_SIZE
+        batch_data, batch_label, batch_smpw = get_batch_wdp(TRAIN_DATASET, train_idxs, start_idx, end_idx)
+        # Augment batched point clouds by rotation
+        if FLAGS.extra_dims:
+            aug_data = np.concatenate((provider.rotate_point_cloud_z(batch_data[:, :, 0:3]),
+                                       batch_data[:, :, 3:]), axis=2)
+        else:
+            aug_data = provider.rotate_point_cloud_z(batch_data)
+        feed_dict = {ops['pointclouds_pl']: aug_data,
+                     ops['labels_pl']: batch_label,
+                     ops['smpws_pl']: batch_smpw,
+                     ops['is_training_pl']: is_training, }
+        summary, step, _, loss_val, pred_val = sess.run([ops['merged'], ops['step'],
+                                                         ops['train_op'], ops['loss'], ops['pred']],
+                                                        feed_dict=feed_dict)
+        train_writer.add_summary(summary, step)
+        pred_val = np.argmax(pred_val, 2)
+        correct = np.sum(pred_val == batch_label)
+        total_correct += correct
+        total_seen += (BATCH_SIZE * NUM_POINT)
+        loss_sum += loss_val
+        if (batch_idx + 1) % 10 == 0:
+            log_string(' -- %03d / %03d --' % (batch_idx + 1, num_batches))
+            log_string('mean loss: %f' % (loss_sum / 10))
+            log_string('accuracy: %f' % (total_correct / float(total_seen)))
+            total_correct = 0
+            total_seen = 0
+            loss_sum = 0
+
+def train_one_epoch_my(sess, ops, train_writer):
+    is_training = True
+    # ops: dict mapping from string to tf ops """
     # Shuffle train samples
     train_idxs = np.arange(0, len(TRAIN_DATASET))
     np.random.shuffle(train_idxs)
@@ -255,7 +359,7 @@ def train_one_epoch(sess, ops, train_writer):
     for batch_idx in range(num_batches):
         start_idx = batch_idx * BATCH_SIZE
         end_idx = (batch_idx+1) * BATCH_SIZE
-        batch_data, batch_label, batch_smpw = get_batch_wdp(TRAIN_DATASET, train_idxs, start_idx, end_idx)
+        batch_data, batch_label, batch_smpw = get_batch(TRAIN_DATASET, train_idxs, start_idx, end_idx)
         # Augment batched point clouds by rotation
         if FLAGS.extra_dims:
             aug_data = np.concatenate((provider.rotate_point_cloud_z(batch_data[:,:,0:3]),
@@ -270,9 +374,17 @@ def train_one_epoch(sess, ops, train_writer):
             ops['train_op'], ops['loss'],ops['all_loss'], ops['pred']], feed_dict=feed_dict)
 
         train_writer.add_summary(summary, step)
-        # print("Loss_val:")
-        # print(loss_val)
-        # input()
+        loss_batch_row = tf.reshape(loss_batch,[loss_batch.shape[0]*loss_batch.shape[1],])
+        top_k, index = tf.nn.top_k(loss_batch_row, int(loss_batch.shape[0]*loss_batch.shape[1]*0.05)) #提取前20%个loss最大索引
+        rows, cols = get_batch_index(index.eval(session=sess))
+        print("Alive1")
+        for i,j in zip(rows, cols):
+            # i = m.eval(session=sess)
+            # j = n.eval(session=sess)
+            bad_sample_data.append(batch_data[i,j,:])
+            bad_sample_label.append(batch_label[i,j])
+            bad_sample_smpw.append(batch_smpw[i,j])
+        print("Alive2")
         pred_val = np.argmax(pred_val, 2)
         correct = np.sum(pred_val == batch_label)
         total_correct += correct
@@ -280,6 +392,53 @@ def train_one_epoch(sess, ops, train_writer):
         loss_sum += loss_val
         if (batch_idx+1)%10 == 0:
             log_string(' -- %03d / %03d --' % (batch_idx+1, num_batches))
+            log_string('mean loss: %f' % (loss_sum / 10))
+            log_string('accuracy: %f' % (total_correct / float(total_seen)))
+            total_correct = 0
+            total_seen = 0
+            loss_sum = 0
+
+
+def train_one_epoch_OHEM(sess, ops, train_writer):
+    """ ops: dict mapping from string to tf ops """
+    is_training = True
+    # Shuffle train samples
+    train_idxs = np.arange(0, len(bad_sample_data))
+    np.random.shuffle(train_idxs)
+    num_batches = int(math.ceil((1.0 * len(bad_sample_data)) / BATCH_SIZE))
+    log_string("OHEM part")
+    log_string(str(datetime.now()))
+
+    total_correct = 0
+    total_seen = 0
+    loss_sum = 0
+    for batch_idx in range(num_batches):
+        start_idx = batch_idx * BATCH_SIZE
+        end_idx = (batch_idx + 1) * BATCH_SIZE
+        batch_data, batch_label, batch_smpw = get_batch_OHEM(bad_sample_data,bad_sample_label,bad_sample_smpw, train_idxs, start_idx, end_idx)
+        # Augment batched point clouds by rotation
+        if FLAGS.extra_dims:
+            aug_data = np.concatenate((provider.rotate_point_cloud_z(batch_data[:, :, 0:3]),
+                                       batch_data[:, :, 3:]), axis=2)
+        else:
+            aug_data = provider.rotate_point_cloud_z(batch_data)
+        feed_dict = {ops['pointclouds_pl']: aug_data,
+                     ops['labels_pl']: batch_label,
+                     ops['smpws_pl']: batch_smpw,
+                     ops['is_training_pl']: is_training, }
+        summary, step, _, loss_val, pred_val = sess.run([ops['merged'], ops['step'],
+                                                                     ops['train_op'], ops['loss'],
+                                                                     ops['pred']], feed_dict=feed_dict)
+
+        train_writer.add_summary(summary, step)
+
+        pred_val = np.argmax(pred_val, 2)
+        correct = np.sum(pred_val == batch_label)
+        total_correct += correct
+        total_seen += (BATCH_SIZE * NUM_POINT)
+        loss_sum += loss_val
+        if (batch_idx + 1) % 10 == 0:
+            log_string(' -- %03d / %03d --' % (batch_idx + 1, num_batches))
             log_string('mean loss: %f' % (loss_sum / 10))
             log_string('accuracy: %f' % (total_correct / float(total_seen)))
             total_correct = 0
@@ -339,14 +498,14 @@ def eval_one_epoch(sess, ops, test_writer):
     log_string('eval mean loss: %f' % (loss_sum / float(num_batches)))
     log_string('eval point accuracy: %f'% (total_correct / float(total_seen)))
     log_string('eval point avg class acc: %f' % (np.mean(np.array(total_correct_class)/(np.array(total_seen_class,dtype=np.float)+1e-6))))
-    per_class_str = '     '
+    per_class_str = '  '
     iou = np.divide(tp,tp+fp+fn)
-    for l in range(NUM_CLASSES):
-        per_class_str += 'class %d[%d] acc: %f, iou: %f; ' % (TEST_DATASET.decompress_label_map[l],l,total_correct_class[l]/float(total_seen_class[l]),iou[l])
+    for l in range(NUM_CLASSES - 1):
+        per_class_str += 'class %d[%d] acc: %f, iou: %f; \n' % (TEST_DATASET.decompress_label_map[l + 1],l + 1,total_correct_class[l+1]/float(total_seen_class[l+1]),iou[l+1])
     log_string(per_class_str)
     log_string('mIOU: {}'.format(iou.mean()))
     
-    return total_correct/float(total_seen)
+    return total_correct/float(total_seen) , iou.mean()
 
 
 if __name__ == "__main__":

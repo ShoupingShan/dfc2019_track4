@@ -20,7 +20,8 @@ from tf_interpolate import three_nn, three_interpolate
 import tf_util as tf_util
 import tensorflow as tf
 import numpy as np
-
+sys.path.append(os.path.join(ROOT_DIR, 'tf_ops/Kernel_Correlation'))
+from kernel_correlation import kernel_correlation
 
 def pointSIFT_group(radius, xyz, points, use_xyz=True):
     idx = pointSIFT_select(xyz, radius)
@@ -150,7 +151,49 @@ PointNet++ layers
 Author: Charles R. Qi
 Date: November 2017
 """
+def sample_and_group_layer1(npoint, radius, nsample, xyz, points, knn=False, use_xyz=True):
+    '''
+    Input:
+        npoint: int32
+        radius: float32
+        nsample: int32
+        xyz: (batch_size, ndataset, 3) TF tensor
+        points: (batch_size, ndataset, channel) TF tensor, if None will just use xyz as points
+        knn: bool, if True use kNN instead of radius search
+        use_xyz: bool, if True concat XYZ with local point features, otherwise just use point features
+    Output:
+        new_xyz: (batch_size, npoint, 3) TF tensor
+        new_points: (batch_size, npoint, nsample, 3+channel) TF tensor
+        idx: (batch_size, npoint, nsample) TF tensor, indices of local points as in ndataset points
+        grouped_xyz: (batch_size, npoint, nsample, 3) TF tensor, normalized point XYZs
+            (subtracted by seed point XYZ) in local regions
+    '''
+    #tf_ops/samples/tf_sampling.py
+    new_xyz = gather_point(xyz, farthest_point_sample(npoint, xyz)) # (batch_size, npoint, 3),挑选满足条件的512个像素
+    if knn:
+        _,idx = knn_point(nsample, xyz, new_xyz)
+    else:
+        idx, pts_cnt = query_ball_point(radius, nsample, xyz, new_xyz)  # 提取512个点index每个点分别属于32个簇之一
+    grouped_xyz = group_point(xyz, idx) # (batch_size, npoint, nsample, 3) #提取512个像素每个像素分别属于32个簇之一
+    grouped_xyz -= tf.tile(tf.expand_dims(new_xyz, 2), [1,1,nsample,1]) # translation normalization 首先增加1维,(bs,512,3)->(bs,512,1,3),第三维张量扩充32倍->(bs,512,32,3),这里假定npoints=512，nsamples=32
+    kernel = tf.Variable(tf.random_normal([32, 16, 3], stddev= 0.1, seed= 1),name='kernel')
+    tf.add_to_collection("kernel", kernel)
+    # kernel = tf.convert_to_tensor(kernel)
+    kc_points = kernel_correlation(grouped_xyz, kernel, 0.005) # KC module ==>(b,l,n)===>(BS, npoint, 1, l)
+    kc_points = tf.transpose(kc_points, perm=[0,2,1])
+    kc_points = tf.tile(tf.expand_dims(kc_points, 2), [1,1,nsample,1])
+    if points is not None:
+        grouped_points = group_point(points, idx) # (batch_size, npoint, nsample, channel)
+        if use_xyz:  #是否考虑原始xyz空间信息
+            new_points = tf.concat([grouped_xyz, grouped_points], axis=-1) # (batch_size, npoint, nsample, 3+channel)
+        else:
+            new_points = grouped_points
+    else:
+        new_points = grouped_xyz
+    new_points = tf.concat([kc_points, new_points], axis= -1)
 
+
+    return new_xyz, new_points, idx, grouped_xyz
 
 def sample_and_group(npoint, radius, nsample, xyz, points, knn=False, use_xyz=True):
     '''
@@ -169,8 +212,8 @@ def sample_and_group(npoint, radius, nsample, xyz, points, knn=False, use_xyz=Tr
         grouped_xyz: (batch_size, npoint, nsample, 3) TF tensor, normalized point XYZs
             (subtracted by seed point XYZ) in local regions
     '''
-
-    new_xyz = gather_point(xyz, farthest_point_sample(npoint, xyz))  # (batch_size, npoint, 3)
+    new_idx = farthest_point_sample(npoint, xyz)
+    new_xyz = gather_point(xyz, new_idx)  # (batch_size, npoint, 3)
     if knn:
         _, idx = knn_point(nsample, xyz, new_xyz)
     else:
@@ -289,6 +332,76 @@ def pointnet_sa_module(xyz, points, npoint, radius, nsample, mlp, mlp2, group_al
         new_points = tf.squeeze(new_points, [2])  # (batch_size, npoints, mlp2[-1])
         return new_xyz, new_points, idx
 
+def pointnet_sa_module_layer1(xyz, points, npoint, radius, nsample, mlp, mlp2, group_all, is_training, bn_decay, scope,
+                       bn=True, pooling='max', knn=True, use_xyz=True, use_nchw=False):
+    ''' PointNet Set Abstraction (SA) Module
+        Input:
+            xyz: (batch_size, ndataset, 3) TF tensor
+            points: (batch_size, ndataset, channel) TF tensor
+            npoint: int32 -- #points sampled in farthest point sampling
+            radius: float32 -- search radius in local region
+            nsample: int32 -- how many points in each local region
+            mlp: list of int32 -- output size for MLP on each point
+            mlp2: list of int32 -- output size for MLP on each region
+            group_all: bool -- group all points into one PC if set true, OVERRIDE
+                npoint, radius and nsample settings
+            use_xyz: bool, if True concat XYZ with local point features, otherwise just use point features
+            use_nchw: bool, if True, use NCHW data format for conv2d, which is usually faster than NHWC format
+        Return:
+            new_xyz: (batch_size, npoint, 3) TF tensor
+            new_points: (batch_size, npoint, mlp[-1] or mlp2[-1]) TF tensor
+            idx: (batch_size, npoint, nsample) int32 -- indices for local regions
+    '''
+    data_format = 'NCHW' if use_nchw else 'NHWC'
+    with tf.variable_scope(scope) as sc:
+        # Sample and Grouping
+        if group_all:
+            nsample = xyz.get_shape()[1].value
+            new_xyz, new_points, idx, grouped_xyz = sample_and_group_all(xyz, points, use_xyz)
+        else:
+            new_xyz, new_points, idx, grouped_xyz = sample_and_group_layer1(npoint, radius, nsample, xyz, points, knn, use_xyz)
+
+        # Point Feature Embedding
+        if use_nchw: new_points = tf.transpose(new_points, [0, 3, 1, 2])
+        for i, num_out_channel in enumerate(mlp):
+            new_points = tf_util.conv2d(new_points, num_out_channel, [1, 1],
+                                        padding='VALID', stride=[1, 1],
+                                        bn=bn, is_training=is_training,
+                                        scope='conv%d' % (i), bn_decay=bn_decay,
+                                        data_format=data_format)
+        if use_nchw: new_points = tf.transpose(new_points, [0, 2, 3, 1])
+
+        # Pooling in Local Regions
+        if pooling == 'max':
+            new_points = tf.reduce_max(new_points, axis=[2], keep_dims=True, name='maxpool')
+        elif pooling == 'avg':
+            new_points = tf.reduce_mean(new_points, axis=[2], keep_dims=True, name='avgpool')
+        elif pooling == 'weighted_avg':
+            with tf.variable_scope('weighted_avg'):
+                dists = tf.norm(grouped_xyz, axis=-1, ord=2, keep_dims=True)
+                exp_dists = tf.exp(-dists * 5)
+                weights = exp_dists / tf.reduce_sum(exp_dists, axis=2,
+                                                    keep_dims=True)  # (batch_size, npoint, nsample, 1)
+                new_points *= weights  # (batch_size, npoint, nsample, mlp[-1])
+                new_points = tf.reduce_sum(new_points, axis=2, keep_dims=True)
+        elif pooling == 'max_and_avg':
+            max_points = tf.reduce_max(new_points, axis=[2], keep_dims=True, name='maxpool')
+            avg_points = tf.reduce_mean(new_points, axis=[2], keep_dims=True, name='avgpool')
+            new_points = tf.concat([avg_points, max_points], axis=-1)
+
+        # [Optional] Further Processing
+        if mlp2 is not None:
+            if use_nchw: new_points = tf.transpose(new_points, [0, 3, 1, 2])
+            for i, num_out_channel in enumerate(mlp2):
+                new_points = tf_util.conv2d(new_points, num_out_channel, [1, 1],
+                                            padding='VALID', stride=[1, 1],
+                                            bn=bn, is_training=is_training,
+                                            scope='conv_post_%d' % (i), bn_decay=bn_decay,
+                                            data_format=data_format)
+            if use_nchw: new_points = tf.transpose(new_points, [0, 2, 3, 1])
+
+        new_points = tf.squeeze(new_points, [2])  # (batch_size, npoints, mlp2[-1])
+        return new_xyz, new_points, idx
 
 def pointnet_sa_module_msg(xyz, points, npoint, radius_list, nsample_list, mlp_list, is_training, bn_decay, scope,
                            bn=True, use_xyz=True, use_nchw=False):
