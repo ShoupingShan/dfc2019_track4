@@ -7,7 +7,7 @@ sys.path.append(os.path.join(ROOT_DIR, '../tf_ops'))
 sys.path.append(os.path.join(ROOT_DIR, '../utils'))
 import tensorflow as tf
 import tf_util
-from pointSIFT_util import pointSIFT_module, pointSIFT_res_module, pointnet_fp_module, pointnet_sa_module
+from pointSIFT_util import pointSIFT_module, pointSIFT_res_module, pointnet_fp_module, pointnet_sa_module, pointnet_sa_module_layer1
 
 
 def placeholder_inputs(batch_size, num_point):
@@ -28,7 +28,7 @@ def get_model(point_cloud, is_training, num_class, bn_decay=None):
     
     # c0
     c0_l0_xyz, c0_l0_points, c0_l0_indices = pointSIFT_res_module(l0_xyz, l0_points, radius=0.1, out_channel=64, is_training=is_training, bn_decay=bn_decay, scope='layer0_c0', merge='concat')
-    l1_xyz, l1_points, l1_indices = pointnet_sa_module(c0_l0_xyz, c0_l0_points, npoint=1024, radius=0.1, nsample=32, mlp=[64,128], mlp2=None, group_all=False, is_training=is_training, bn_decay=bn_decay, scope='layer1')
+    l1_xyz, l1_points, l1_indices = pointnet_sa_module_layer1(c0_l0_xyz, c0_l0_points, npoint=512, radius=0.1, nsample=32, mlp=[64,128], mlp2=None, group_all=False, is_training=is_training, bn_decay=bn_decay, scope='layer1')
 
     # c1
     c0_l1_xyz, c0_l1_points, c0_l1_indices = pointSIFT_res_module(l1_xyz, l1_points, radius=0.25, out_channel=128, is_training=is_training, bn_decay=bn_decay, scope='layer1_c0')
